@@ -1,0 +1,7 @@
+#Archivos de compilacion innecesarios
+/SDEVH/obj
+/SDEVH/bin
+
+#Archivos propios de usuario
+/packages
+/.vs
