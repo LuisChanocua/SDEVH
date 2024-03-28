@@ -9,6 +9,7 @@
 
 .contenedor_tabla-usuarios {
     overflow-x: auto; /* Permitir desplazamiento horizontal */
+    margin-top: 2rem;
 }
 
 .tabla-usuarios {
@@ -64,13 +65,13 @@ tr:nth-child(even) {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap:10px;
+    gap: 10px;
 }
 
 .inputs-datos {
     display: flex;
     flex-direction: column;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
 }
 
 .datos-label {
@@ -82,9 +83,39 @@ tr:nth-child(even) {
     border-radius: 10px;
     padding: 5px;
     background-color: #ECECEC;
-    border:none;
-    height:50px;
+    border: none;
+    height: 50px;
     min-width: 250px;
+}
+
+.datos-acciones {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 10px;
+}
+
+.btn_acciones {
+    
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.btn_acciones:hover {
+    color:white;
+    text-decoration:underline;
+}
+
+.btn_acciones-cancelar {
+    background-color: #EDCA3B;
+}
+
+.btn_acciones-anadir {
+    background-color: #00BF63;
 }
 /* Estilos para hacer la tabla responsive */
 @media screen and (max-width: 768px) {
@@ -96,5 +127,9 @@ tr:nth-child(even) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .datos-acciones{
+        flex-direction:column;
     }
 }
