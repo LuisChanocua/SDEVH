@@ -18,6 +18,11 @@ namespace SDEVH.Controllers
             return View();
         }
 
+        public IActionResult ControlUsuarios()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
