@@ -38,30 +38,7 @@ namespace SDEVH.Controllers
             return View();
         }
 
-        public IActionResult GenerarActaPosesion()
-        {
-            return View();
-        }
-
-        public IActionResult IngresarMedidasPosesion()
-        {
-            return View();
-        }
-
-        public IActionResult VistaPreviaActaPosesion()
-        {
-            return View();
-        }
-
-        public IActionResult EditarActaPosesion()
-        {
-            return View();
-        }
-
-        public IActionResult SubirArchivosActaPosesion()
-        {
-            return View();
-        }
+       
       
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
