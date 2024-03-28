@@ -1,1 +1,117 @@
-﻿
+﻿@{
+    ViewData["Title"] = "ControlUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/controlusuarios.css" />
+}
+
+<div class="contenedor_controlusuarios">
+    <div class="encabezado-pagina">
+        <h1 class="pagina-titulo">Administración de usuarios</h1>
+    </div>
+
+    <div class="contenedor_tabla-usuarios container-sm">
+        <table class="tabla-usuarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
+                    <th>Número Telefónico</th>
+                    <th>Cargo</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Carlos</td>
+                    <td>-</td>
+                    <td>carlos@example.com</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="usuarios-acciones ">
+                        <a class="acciones-item acciones-modificar" href="#">M</a>
+                        <a class="acciones-item acciones-bloquear" href="#">B</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>María</td>
+                    <td>-</td>
+                    <td>maria@example.com</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="usuarios-acciones">
+                        <a class="acciones-item acciones-modificar" href="#">M</a>
+                        <a class="acciones-item acciones-bloquear" href="#">B</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <div class="contenedor-datos">
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="nombre">Nombre</label>
+                <input class="datos-input" name="nombre" id="nombre" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="correo">Correo electrónico</label>
+                <input class="datos-input" name="correo" id="correo" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="tel">Numero de celular/telefono</label>
+                <input class="datos-input" name="tel" id="tel" />
+            </div>
+        </div>
+        <div class="contenido-datos2">
+            <div class="inputs-datos">
+                <label class="datos-label" for="contrasena">Contraseña</label>
+                <input class="datos-input" name="contrasena" id="contrasena" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="apellidos">Apellidos</label>
+                <input class="datos-input" name="apellidos" id="apellidos" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="direccion">Dirección</label>
+                <input class="datos-input" name="direccion" id="direccion" />
+            </div>
+        </div>
+        <div class="contenido-datos3">
+            <div class="inputs-datos">
+                <label class="datos-label" for="cargo">Cargo</label>
+                <select class="datos-input" name="cargo">
+                    <option value="secretario">Secretario</option>
+                    <option value="tesorero">Tesorero</option>
+                    <option value="vigilacia">Vigilacia</option>
+                    <option value="admistrador">Admistrador</option>
+                </select>
+            </div>
+            <div class="inputs-datos">
+                <div class="datos-acciones">
+                    <a class="btn_acciones" href="#" id="btn_cancelar">Cancelar</a>
+                    <a class="btn_acciones" href="#" id="btn_anadir">Añadir</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

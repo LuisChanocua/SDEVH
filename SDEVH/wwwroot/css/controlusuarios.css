@@ -1,0 +1,100 @@
+﻿
+.encabezado-pagina {
+    background-color: #00BF63;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.contenedor_tabla-usuarios {
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+}
+
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.usuarios-acciones {
+    padding: 1rem;
+    display: flex;
+    gap: 2px;
+}
+
+.acciones-item {
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+    .acciones-item:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+.acciones-modificar {
+    background-color: blue;
+    padding: 10px 11px;
+}
+
+.acciones-bloquear {
+    background-color: red;
+    padding: 10px 13px;
+}
+
+
+.contenedor-datos {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:10px;
+}
+
+.inputs-datos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:2rem;
+}
+
+.datos-label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.datos-input {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #ECECEC;
+    border:none;
+    height:50px;
+    min-width: 250px;
+}
+/* Estilos para hacer la tabla responsive */
+@media screen and (max-width: 768px) {
+    .main {
+        height: auto;
+    }
+
+    .contenedor-datos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

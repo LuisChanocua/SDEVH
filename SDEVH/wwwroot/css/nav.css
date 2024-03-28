@@ -1,6 +1,13 @@
-﻿.nav-styles {
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.nav-styles {
     background-color: #edca3b;
 }
 .nav-list {
     text-align: center;
+
 }
