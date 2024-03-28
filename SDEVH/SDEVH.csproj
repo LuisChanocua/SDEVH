@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\assets\home\" />
-    <Folder Include="wwwroot\js\" />
+    <Compile Remove="wwwroot\assets\**" />
+    <Compile Remove="wwwroot\js\**" />
+    <Content Remove="wwwroot\assets\**" />
+    <Content Remove="wwwroot\js\**" />
+    <EmbeddedResource Remove="wwwroot\assets\**" />
+    <EmbeddedResource Remove="wwwroot\js\**" />
+    <None Remove="wwwroot\assets\**" />
+    <None Remove="wwwroot\js\**" />
   </ItemGroup>
 
 </Project>
