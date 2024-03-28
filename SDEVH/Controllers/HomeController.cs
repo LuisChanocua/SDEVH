@@ -18,11 +18,28 @@ namespace SDEVH.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult HomePresidente()
         {
             return View();
         }
 
+        public IActionResult ControlUsuarios()
+        {
+            return View();
+        }
+
+        public IActionResult EstadoActaPresidente()
+        {
+            return View();
+        }
+
+        public IActionResult EncontrarTerreno()
+        {
+            return View();
+        }
+
+       
+      
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
