@@ -7,6 +7,60 @@
     <link rel="stylesheet" href="~/css/controlusuarios.css" />
 }
 
-<div class="encabezado-pagina">
-    <h1 class="pagina-titulo">Administración de usuarios</h1>
+<div class="contenedor_controlusuarios">
+    <div class="encabezado-pagina">
+        <h1 class="pagina-titulo">Administración de usuarios</h1>
+    </div>
+
+    <div class="contenedor_tabla-usuarios container-sm">
+        <table class="tabla-usuarios">
+            <thead class="thead-usuarios">
+                <tr class="thead_tr-usuarios">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
+                    <th>Número Telefónico</th>
+                    <th>Cargo</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody class="tbody-usuarios">
+                <tr class="tr-usuarios">
+                    <td>1</td>
+                    <td>Carlos</td>
+                    <td>carlos@example.com</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="usuarios-acciones ">
+                        <a class="acciones-modificar" href="#">M</a>
+                        <a class="acciones-bloquear" href="#">B</a>
+                    </td>
+                    
+                </tr>
+                <tr class="tr-usuarios">
+                    <td>2</td>
+                    <td>María</td>
+                    <td>maria@example.com</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="usuarios-acciones ">
+                        <a class="acciones-modificar" href="#">M</a>
+                        <a class="acciones-bloquear" href="#">B</a>
+                    </td>
+                </tr>
+                
+            </tbody>
+
+        </table>
+
+    </div>
+
 </div>
+

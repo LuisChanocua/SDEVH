@@ -7,6 +7,46 @@
     background-color: #00BF63;
     width: 100%;
     color: white;
-    padding:10px;
-    text-align:center;
+    padding: 10px;
+    text-align: center;
+}
+
+.contenedor_tabla-usuarios{
+
+}
+
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para hacer la tabla responsive */
+@media screen and (max-width: 768px) {
+    table, .tr-usuarios, .tbody-usuarios, .thead-usuarios {
+        border: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .thead_tr-usuarios{
+        display:none;
+    }
+
+        
+       
+       
 }
