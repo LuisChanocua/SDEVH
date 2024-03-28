@@ -1,6 +1,6 @@
 ﻿.nav-styles {
-    background-color: yellow;
+    background-color: #edca3b;
 }
-element-style{
-    font-weight: bold;
+.nav-list {
+    text-align: center;
 }
