@@ -1,2 +1,8 @@
 ﻿body {
+    height:100vh;
+}
+
+.encabezado-pagina {
+    background-color: #00BF63;
+    width: 100%;
 }
