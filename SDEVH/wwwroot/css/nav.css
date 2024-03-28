@@ -5,5 +5,9 @@
 }
 
 .nav-styles {
-    background-color: #EDCA3B;
+    background-color: #edca3b;
+}
+.nav-list {
+    text-align: center;
+
 }
