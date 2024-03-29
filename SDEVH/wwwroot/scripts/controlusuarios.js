@@ -17,8 +17,16 @@ $("#btn_anadir").click(function () {
     /*Validaciones de los campos no estén vacios*/
     if (nombre = ! "" && correo != "" && tel != "" && contrasena != "" && apellidos != "" && direccion != "" && cargo != "") {
 
-
-
+        if (!validarCorreo(correo)) {
+            //correo invalido
+            console.log("Correo invalido")
+            return false;
+        }
+        if (!validarTelefono(tel)) {
+            //tel invalido
+            console.log("Tel invalido")
+            return false;
+        }
 
     } else {
         $("#alertas").show();
@@ -29,7 +37,3 @@ $("#btn_anadir").click(function () {
 });
 
 
-/*Metodo que valida el correo*/
-function validarCorreo(correo) {
-
-}
