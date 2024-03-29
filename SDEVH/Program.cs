@@ -27,6 +27,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+//Rutas enrutadas
+#region RutasAccount
+app.MapControllerRoute(
+        name: "Login",
+        pattern: "Login",
+        defaults: new { controller = "Account", action = "Login" });
+
+#endregion
+
 #region RutasActasPosesion
 app.MapControllerRoute(
         name: "CreacionActas",
@@ -58,7 +67,6 @@ app.MapControllerRoute(
 
 
 #endregion
-
 
 #region Rutas Default
 app.MapControllerRoute(
