@@ -27,7 +27,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-//Rutas enrutadas
+//Vistas enrutadas
 #region RutasAccount
 app.MapControllerRoute(
         name: "Login",
@@ -39,8 +39,28 @@ app.MapControllerRoute(
 #region RutasActasPosesion
 app.MapControllerRoute(
         name: "CreacionActas",
-        pattern: "CreacionActas",
+        pattern: "ActaPosesion/CreacionActas",
         defaults: new { controller = "ActaPosesion", action = "GenerarActaPosesion" });
+
+app.MapControllerRoute(
+        name: "EditarActaPosesion",
+        pattern: "ActaPosesion/EditarActaPosesion",
+        defaults: new { controller = "ActaPosesion", action = "EditarActaPosesion" });
+
+app.MapControllerRoute(
+        name: "IngresarMedidas",
+        pattern: "ActaPosesion/IngresarMedidas",
+        defaults: new { controller = "ActaPosesion", action = "IngresarMedidasPosesion" });
+
+app.MapControllerRoute(
+        name: "IngresarMedidas",
+        pattern: "ActaPosesion/SubirArchivos",
+        defaults: new { controller = "ActaPosesion", action = "SubirArchivos" });
+
+app.MapControllerRoute(
+        name: "IngresarMedidas",
+        pattern: "ActaPosesion/VistaPrevia",
+        defaults: new { controller = "ActaPosesion", action = "VistaPreviaActaPosesion" });
 
 #endregion
 
@@ -50,7 +70,20 @@ app.MapControllerRoute(
         pattern: "ControlUsuarios",
         defaults: new { controller = "Home", action = "ControlUsuarios" });
 
+app.MapControllerRoute(
+        name: "EstadoActa",
+        pattern: "EstadoActa",
+        defaults: new { controller = "Home", action = "EstadoActaPresidente" });
 
+app.MapControllerRoute(
+        name: "EncontrarTerreno",
+        pattern: "EncontrarTerreno",
+        defaults: new { controller = "Home", action = "EncontrarTerreno" });
+
+app.MapControllerRoute(
+        name: "DocumentosAbiertos",
+        pattern: "DocumentosAbiertos",
+        defaults: new { controller = "Home", action = "HomePresidente" });
 #endregion
 
 #region Errores
