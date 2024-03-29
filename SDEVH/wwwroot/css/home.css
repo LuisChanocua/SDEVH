@@ -1,7 +1,26 @@
 ﻿body {
     background-color: whitesmoke;
 }
+
 .img {
-    height: 500px;
-    width: 2500px;
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
 }
+
+    /* imagen lado derecho */
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .container img {
+            max-width: 30%; /* ajusta el tamaño de la imagen según sea necesario */
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-right: 10px;
+            height: auto;
+            overflow-x: auto;
+        }
+
