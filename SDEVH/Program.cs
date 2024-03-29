@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,12 +27,21 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+#region RutasActasPosesion
+app.MapControllerRoute(
+        name: "CreacionActas",
+        pattern: "CreacionActas",
+        defaults: new { controller = "ActaPosesion", action = "GenerarActaPosesion" });
+
+#endregion
 
 #region RutasHome
 app.MapControllerRoute(
         name: "ControlUsuarios",
         pattern: "ControlUsuarios",
         defaults: new { controller = "Home", action = "ControlUsuarios" });
+
+
 #endregion
 
 #region Errores
@@ -51,7 +63,9 @@ app.MapControllerRoute(
 #region Rutas Default
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "/",
+    defaults: new { controller = "Home", action = "Index" });
+
 
 /*Si no encuentra la ruta lo manda a 404*/
 app.MapControllerRoute(
