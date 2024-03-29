@@ -61,7 +61,7 @@ tr:nth-child(even) {
 
 
 .contenedor-datos {
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -92,12 +92,11 @@ tr:nth-child(even) {
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     gap: 10px;
 }
 
 .btn_acciones {
-    
     padding: 15px 25px;
     color: white;
     font-weight: bold;
@@ -105,10 +104,10 @@ tr:nth-child(even) {
     border-radius: 10px;
 }
 
-.btn_acciones:hover {
-    color:white;
-    text-decoration:underline;
-}
+    .btn_acciones:hover {
+        color: white;
+        text-decoration: underline;
+    }
 
 .btn_acciones-cancelar {
     background-color: #EDCA3B;
@@ -117,6 +116,19 @@ tr:nth-child(even) {
 .btn_acciones-anadir {
     background-color: #00BF63;
 }
+
+.alertas {
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 10px;
+    display:none;
+}
+
 /* Estilos para hacer la tabla responsive */
 @media screen and (max-width: 768px) {
     .main {
@@ -129,7 +141,7 @@ tr:nth-child(even) {
         align-items: center;
     }
 
-    .datos-acciones{
-        flex-direction:column;
+    .datos-acciones {
+        flex-direction: column;
     }
 }
