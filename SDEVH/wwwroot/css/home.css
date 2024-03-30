@@ -8,20 +8,23 @@
     overflow-x: auto;
 }
 
-    /* imagen lado derecho */
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+.iamgen-edit {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    overflow-x: auto;
 }
 
-        .container img {
-            max-width: 30%; /* ajusta el tamaño de la imagen según sea necesario */
-            margin-left: 10px;
-            margin-top: 20px;
-            margin-right: 10px;
-            height: auto;
-            overflow-x: auto;
-        }
+.responsive-img {
+    max-width: 80%;
+    height: auto;
+}
 
+@media (max-width: 999px) {
+    .align-items-center {
+        flex-direction: column;
+        align-items: center;
+    }
+}
