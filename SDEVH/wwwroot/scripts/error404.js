@@ -1,6 +1,7 @@
 ﻿let t1 = gsap.timeline();
 let t2 = gsap.timeline();
 let t3 = gsap.timeline();
+let contador = 0;
 
 t1.to(".cog1",
 {
@@ -35,7 +36,7 @@ t3.fromTo(".wrong-para",
 
 
 function actualizarEtiquetas() {
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 1059px)").matches) {
         // Eliminar etiquetas existentes
         var primerNumero = document.querySelector('.first-four');
         var segundoNumero = document.querySelector('.cog-wheel1');
@@ -61,12 +62,57 @@ function actualizarEtiquetas() {
             contenedor.removeChild(valorError);
         }
 
+        contador++;
+
         // Crear y agregar nuevas etiquetas
         var nuevaEtiqueta = document.createElement("h1");
         nuevaEtiqueta.className = "numeroError";
         nuevaEtiqueta.textContent = "404";
 
         contenedor.appendChild(nuevaEtiqueta);
+    } else if (window.matchMedia("(min-width: 1060px)").matches) {
+        if (contador > 0) {
+            var contenedor = document.querySelector('.container');
+            var valorError = document.querySelector('.numeroError');
+            var mensaje = document.querySelector('.wrong-para');
+            if (valorError !== null) {
+                contenedor.removeChild(valorError);
+            }
+            if (mensaje !== null) {
+                contenedor.removeChild(mensaje);
+            }
+
+            contenedor.innerHTML = `
+                <h1 class="first-four">4</h1>
+                <div class="cog-wheel1">
+                    <div class="cog1">
+                        <div class="top"></div>
+                        <div class="down"></div>
+                        <div class="left-top"></div>
+                        <div class="left-down"></div>
+                        <div class="right-top"></div>
+                        <div class="right-down"></div>
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <div class="cog-wheel2">
+                    <div class="cog2">
+                        <div class="top"></div>
+                        <div class="down"></div>
+                        <div class="left-top"></div>
+                        <div class="left-down"></div>
+                        <div class="right-top"></div>
+                        <div class="right-down"></div>
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <h1 class="second-four">4</h1>
+                <p class="wrong-para">¡Oops! Ha intentado acceder a un lugar que no existe.</p>
+            `;
+        }
+
     }
 }
 
