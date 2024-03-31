@@ -1,27 +1,35 @@
-﻿
-.encabezado-pagina {
+﻿.encabezado-pagina {
     background-color: #00BF63;
     width: 100%;
     color: white;
     padding: 10px;
     text-align: center;
 }
+.encabezado-titulo {
+    background-color: white;
+    width: 100%;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
 
-
-
-.contenedor-datos h2 {
-    text-align: center;  
-    font-weight:bold;
+.letra {
+    text-align: center;
+    font-weight: bold;
 }
 
 .contenedor-datos {
     margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap; /* Añade esto para que los elementos se envuelvan cuando no quepan en una sola fila */
+    justify-content: center; /* Centra los elementos */
+    gap: 10px;
 }
 
 .contenido-datos1 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap; /* Añade esto para que los elementos se envuelvan cuando no quepan en una sola fila */
+    justify-content: center; /* Centra los elementos */
     gap: 10px;
 }
 
@@ -29,6 +37,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+    align-items: center; /* Centra los elementos */
 }
 
 .datos-label {
@@ -43,13 +52,14 @@
     border: none;
     height: 50px;
     min-width: 250px;
+    max-width: calc(50% - 20px); /* Añade esto para que los inputs ocupen como máximo el 50% del ancho del contenedor */
 }
 
 .datos-acciones {
     text-align: center;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos */
     gap: 10px;
 }
 
@@ -70,6 +80,11 @@
     background-color: #EDCA3B;
 }
 
+
+.btn_acciones-agregar {
+    background-color: black;
+}
+
 .btn_acciones-anadir {
     background-color: #00BF63;
 }
@@ -83,23 +98,17 @@
     font-size: 1.2rem;
     border-radius: 10px;
     padding: 10px;
-    display:none;
+    display: none;
 }
-/*
- Estilos para hacer la tabla responsive 
+
+/* Estilos para hacer la tabla responsive */
 @media screen and (max-width: 768px) {
-    .main {
-        height: auto;
+    .inputs-datos {
+        max-width: 100%; /* Ajusta el ancho máximo para ocupar todo el espacio en dispositivos pequeños */
     }
 
-    .contenedor-datos {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .datos-acciones {
-        flex-direction: column;
+    .btn_acciones {
+        width: 100%; /* Ajusta el ancho de los botones para ocupar todo el espacio disponible */
     }
 }
-*/
+
