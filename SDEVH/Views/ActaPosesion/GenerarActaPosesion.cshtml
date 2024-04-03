@@ -1,5 +1,57 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Generaractadeposecion";
 }
+@section Styles {
+    <link rel="stylesheet" href="~/css/generaracta.css" />
+}
+<div class="encabezado-pagina">
+    <h1 class="pagina-titulo">Generar acta</h1>
+</div>
+<div class="encabezado-titulo">
+    <h2 class="pagina-titulo">Seleccione el tipo de acta</h2>
+</div>
+
+<div class="contenedor_generar container-sm">
+    <div class="inputs-datos">
+        <label class="datos-label" for="cargo">Cargo</label>
+        <select class="datos-input" name="cargo" id="cargo">
+            <option value="secretario">Secretario</option>
+            <option value="tesorero">Tesorero</option>
+            <option value="vigilacia">Vigilacia</option>
+            <option value="admistrador">Admistrador</option>
+        </select>
+        <div class="encabezado-titulo">
+            <h2 class="pagina-titulo">Ingrese los datos del documento</h2>
+        </div>
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="nombre">NOMBRE DEL QUE SEDE</label>
+                <input class="datos-input" name="nombre" id="nombre" type="text" />
+            </div>
+        </div>
+        <div class="datos-acciones">
+            <a class="btn_acciones btn_acciones-agregar" href="#" id="">+</a>
+        </div>
+        <div class="contenido-datos2">
+            <div class="inputs-datos">
+                <label class="datos-label" for="contrasena">NOMBRE(S) aL QUE SE LE sede</label>
+                <input class="datos-input" name="contrasena" id="contrasena" type="text" />
+            </div>
+        </div>
+        <div class="datos-acciones">
+            <a class="btn_acciones btn_acciones-agregar" href="#" id="">+</a>
+        </div>
+        <div class="contenido-datos3">
+            <div class="inputs-datos">
+                <label class="datos-label" for="otros-datos">Otros datos</label>
+                <textarea class="datos-input" name="otros-datos" id="otros-datos"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="inputs-datos">
+        <div class="datos-acciones">
+            <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
+            <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Añadir</a>
+        </div>
+    </div>
+</div>
