@@ -5,6 +5,7 @@
     padding: 10px;
     text-align: center;
 }
+
 .encabezado-titulo {
     background-color: white;
     width: 100%;
@@ -111,4 +112,3 @@
         width: 100%; /* Ajusta el ancho de los botones para ocupar todo el espacio disponible */
     }
 }
-
