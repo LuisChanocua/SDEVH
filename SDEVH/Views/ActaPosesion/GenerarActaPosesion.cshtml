@@ -13,8 +13,8 @@
 
 <div class="contenedor_generar container-sm">
     <div class="inputs-datos">
-        <label class="datos-label" for="cargo">Cargo</label>
-        <select class="datos-input" name="cargo" id="cargo">
+        <label class="datos-label" for="tipo">Cargo</label>
+        <select class="datos-input" name="tipo" id="tipo">
             <option value="secretario">Secretario</option>
             <option value="tesorero">Tesorero</option>
             <option value="vigilacia">Vigilacia</option>
@@ -34,8 +34,8 @@
         </div>
         <div class="contenido-datos2">
             <div class="inputs-datos">
-                <label class="datos-label" for="contrasena">NOMBRE(S) aL QUE SE LE sede</label>
-                <input class="datos-input" name="contrasena" id="contrasena" type="text" />
+                <label class="datos-label" for="sede">NOMBRE(S) aL QUE SE LE sede</label>
+                <input class="datos-input" name="sede" id="sede" type="text" />
             </div>
         </div>
         <div class="datos-acciones">
@@ -43,12 +43,15 @@
         </div>
         <div class="contenido-datos3">
             <div class="inputs-datos">
-                <label class="datos-label" for="otros-datos">Otros datos</label>
-                <textarea class="datos-input" name="otros-datos" id="otros-datos"></textarea>
+                <label class="datos-label" for="otrosdatos">Otros datos</label>
+                <textarea class="datos-input" name="otrosdatos" id="otrosdatos"></textarea>
             </div>
         </div>
 
     </div>
+    <div class="encabezado-titulo alertas container-sm" id="alertas"></div>
+    <div class="encabezado-titulo"></div>
+
     <div class="inputs-datos">
         <div class="datos-acciones">
             <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
@@ -56,3 +59,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/scripts/generaacta.js"></script>
+} 
