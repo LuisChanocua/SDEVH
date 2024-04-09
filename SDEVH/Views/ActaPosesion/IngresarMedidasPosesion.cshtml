@@ -1,5 +1,92 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "IngresarMedidasPosesion";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/medidas.css" />
+}
+<div class="contenedor_ingresarmedidas">
+    <div class="encabezado-pagina">
+        <h1 class="pagina-titulo">Control de usuarios</h1>
+    </div>
+
+    <div class="encabezado-titulo">
+        <h2 class="letra">INGRESAR MEDIDAS</h2>
+    </div>
+
+    <div class="contenedor-datos container-sm">
+
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="norte">Norte</label>
+                <input class="datos-input" name="norte" id="norte" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="sur">Sur</label>
+                <input class="datos-input" name="sur" id="sur" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="este">Este</label>
+                <input class="datos-input" name="este" id="este" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="oeste">Oeste</label>
+                <input class="datos-input" name="oeste" id="oeste" type="number" />
+            </div>
+
+        </div>
+
+        <div class="encabezado-titulo"></div>
+            <div class="datos-acciones">
+                <a class="btn_acciones btn_acciones-agregar" href="#" id="">+</a>
+            </div>
+        <div class="encabezado-titulo"></div>
+
+        <div class="encabezado-titulo">
+            <h2 class="letra">INGRESAR SUS COLINDANCIAS</h2>
+        </div>
+
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="norte2">Norte</label>
+                <input class="datos-input" name="norte2" id="norte2" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="sur2">Su2r</label>
+                <input class="datos-input" name="sur2" id="sur2" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="este2">Este</label>
+                <input class="datos-input" name="este2" id="este2" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="oeste2">Oeste</label>
+                <input class="datos-input" name="oeste2" id="oeste2" type="number" />
+            </div>
+        </div>
+
+        <div class="encabezado-titulo"></div>
+        <div class="datos-acciones">
+            <a class="btn_acciones btn_acciones-agregar" href="#" id="">+</a>
+        </div>
+        <div class="encabezado-titulo"></div>
+
+        <div class="encabezado-titulo alertas container-sm" id="alertas"></div>
+
+        <div class="encabezado-titulo"></div>
+        <div class="inputs-datos">
+            <div class="datos-acciones">
+                <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
+                <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Añadir</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+@section Scripts {
+    <script src="~/scripts/medidas.js"></script>
 }
