@@ -11,15 +11,24 @@ body {
 }
 
 
-
 .nav-styles {
     background-color: #edca3b;
 }
+
 .nav-list {
     text-align: center;
-
 }
 
 .textnav {
     font-weight: bold
+}
+
+.nav-item .material-icons {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icono {
+    display: inline-block !important;
+    vertical-align: middle !important;
 }
