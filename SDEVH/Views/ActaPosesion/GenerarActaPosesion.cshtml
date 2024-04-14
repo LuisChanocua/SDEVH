@@ -2,64 +2,72 @@
     ViewData["Title"] = "Generaractadeposecion";
 }
 @section Styles {
-    <link rel="stylesheet" href="~/css/generaracta.css" />
+    <link rel="stylesheet" href="~/css/genacta.css" />
 }
-<div class="encabezado-pagina">
-    <h1 class="pagina-titulo">Generar acta</h1>
-</div>
-<div class="encabezado-titulo">
-    <h2 class="pagina-titulo">Seleccione el tipo de acta</h2>
-</div>
+<div class="contenedor_generaracta">
+    <div class="encabezado-pagina">
+        <h1 class="pagina-titulo">Nueva acta de posecion</h1>
+    </div>
+    <div class="alertas container-sm" id="alertas"></div>
 
-<div class="contenedor_generar container-sm">
-    <div class="inputs-datos">
-        <label class="datos-label" for="tipo">Cargo</label>
-        <select class="datos-input" name="tipo" id="tipo">
-            <option value="secretario">Secretario</option>
-            <option value="tesorero">Tesorero</option>
-            <option value="vigilacia">Vigilacia</option>
-            <option value="admistrador">Admistrador</option>
-        </select>
-        <div class="encabezado-titulo">
-            <h2 class="pagina-titulo">Ingrese los datos del documento</h2>
+    <div class="contenedor-datos">
+        <div class="contenido-datos3">
+            <div class="inputs-datos">
+                <label class="datos-label" for="cargo">Tipo de acta</label>
+                <select class="datos-input" name="tipo" id="tipo">
+                    <option value="secretario">Secretario</option>
+                    <option value="tesorero">Tesorero</option>
+                    <option value="vigilacia">Vigilacia</option>
+                    <option value="admistrador">Admistrador</option>
+                </select>
+            </div>
+
         </div>
         <div class="contenido-datos1">
             <div class="inputs-datos">
-                <label class="datos-label" for="nombre">NOMBRE DEL QUE SEDE</label>
+                <label class="datos-label" for="nombre">Nombre(s) del que sede</label>
                 <input class="datos-input" name="nombre" id="nombre" type="text" />
             </div>
-        </div>
-        <div class="datos-acciones">
-            <a class="btn_acciones btn_acciones-agregar" href="#" id="">+</a>
+                        <div class="inputs-datos">
+                <label class="datos-label" for="nombre">Apellido(s) del que sede</label>
+                <input class="datos-input" name="nombre" id="nombre" type="text" />
+            </div>
+                <div class="datos-acciones">
+                    <a class="btn_acciones " href="#" id="">+</a>
+                    <a class="btn_acciones " href="#" id="">-</a>
+                </div>
+
+
         </div>
         <div class="contenido-datos2">
             <div class="inputs-datos">
-                <label class="datos-label" for="sede">NOMBRE(S) aL QUE SE LE sede</label>
+                <label class="datos-label" for="contrasena">Nombre(s) al que se le sede</label>
                 <input class="datos-input" name="sede" id="sede" type="text" />
             </div>
+                <div class="datos-acciones">
+                    <a class="btn_acciones" href="#" id="">+</a>
+                    <a class="btn_acciones" href="#" id="">-</a>
+                </div>
+
         </div>
-        <div class="datos-acciones">
-            <a class="btn_acciones btn_acciones-agregar" href="#" id="">+</a>
-        </div>
-        <div class="contenido-datos3">
+
+       <div class="contenido-datos3">
             <div class="inputs-datos">
                 <label class="datos-label" for="otrosdatos">Otros datos</label>
                 <textarea class="datos-input" name="otrosdatos" id="otrosdatos"></textarea>
             </div>
+            <div class="inputs-datos">
+                <div class="datos-acciones">
+                    <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
+                    <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Añadir</a>
+                </div>
+            </div>
         </div>
 
     </div>
-    <div class="encabezado-titulo alertas container-sm" id="alertas"></div>
-    <div class="encabezado-titulo"></div>
 
-    <div class="inputs-datos">
-        <div class="datos-acciones">
-            <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
-            <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Añadir</a>
-        </div>
-    </div>
 </div>
 
 @section Scripts {
-    <script src="~/scripts/generaacta.js"></script>
+    <script src="~/scripts/actagenerar.js"></script>
 } 

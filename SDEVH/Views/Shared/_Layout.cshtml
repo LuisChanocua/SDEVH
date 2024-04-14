@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SADVH</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/nav.css" />
+    <!-- Enlaza Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/css/navbar.css" />
     <link rel="stylesheet" href="~/css/footer.css" />
+
 
     @RenderSection("Styles", required:false)
 </head>
@@ -16,36 +19,57 @@
     <header>
         <nav class="nav-styles navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
             <div class="container-fluid">
+                <img src="~/assets/img/logo.png" alt="Alternate Text" />
                 <a class="textnav navbar-brand" href="~/">SADEVH </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/">Inicio</a>
+                            <a class="textnav nav-link text-dark" href="~/">
+                                <span class="icono"><i class="material-icons">home</i></span>
+                                Inicio
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="textnav nav-link text-dark"  href="~/EstadoActa">Estado del acta</a>
+                            <a class="textnav nav-link text-dark" href="~/EstadoActa">
+                                <span class="icono"><i class="material-icons">article</i></span>
+                                Estado del acta
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/EncontrarTerreno">Ubicacion del terreno</a>
+                            <a class="textnav nav-link text-dark" href="~/EncontrarTerreno">
+                                <span class="icono"><i class="material-icons">pin_drop</i></span>
+                                Ubicacion del terreno
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/ControlUsuarios">Control de usuarios</a>
+                            <a class="textnav nav-link text-dark" href="~/ControlUsuarios">
+                                <span class="icono"><i class="material-icons">admin_panel_settings</i></span>
+                                Control de usuarios
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/ActaPosesion/CreacionActas">Creacion de actas</a>
+                            <a class="textnav nav-link text-dark" href="~/ActaPosesion/CreacionActas">
+                                <span class="icono"><i class="material-icons">post_add</i></span>
+                                Creacion de actas
+                            </a>
                         </li>
-
-                        
                     </ul>
+
                     <ul>
                         <li class="navbar-nav ms-auto">
-                            <a class="textnav nav-link text-dark" href="~/Privacy">USER</a>
+                            <a class="textnav nav-link text-dark" href="~/Privacy">
+                                <span class="icono"><i class="material-icons">person</i></span>
+                                Usuario
+                            </a>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -59,7 +83,7 @@
     @* footer *@
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - SDEVH - <a href="~/Privacy">Privacy</a>
+            &copy; 2024 - SDEVH - <a href="~/Privacy">Privacidad</a>
         </div>
     </footer>
     <script src="~/scripts/jquery-3.4.1.js"></script>
