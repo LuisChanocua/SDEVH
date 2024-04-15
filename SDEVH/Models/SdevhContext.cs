@@ -11,6 +11,7 @@ namespace SDEVH.Models
     {
         //Modelos de tablas bd
         public DbSet<UsuarioHistorial> UsuarioHistorial { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         private readonly IConfiguration Configuration;
 
