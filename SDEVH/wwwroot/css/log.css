@@ -1,0 +1,149 @@
+﻿.encabezado-pagina {
+    background-color: #00BF63;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.imgtop {
+    display: block;
+    margin: 0 auto;
+}
+
+.encabezado-titulo {
+    background-color: white;
+    width: 100%;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.letra {
+    text-align: center;
+    font-weight: bold;
+}
+
+.contenedor-datos {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap; /* Añade esto para que los elementos se envuelvan cuando no quepan en una sola fila */
+    justify-content: center; /* Centra los elementos */
+    gap: 10px;
+}
+
+.contenido-datos1 {
+    display: flex;
+    flex-wrap: wrap; /* Añade esto para que los elementos se envuelvan cuando no quepan en una sola fila */
+    justify-content: center; /* Centra los elementos */
+    gap: 10px;
+}
+
+.inputs-datos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    align-items: center; /* Centra los elementos */
+}
+
+.datos-label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.datos-input {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #ECECEC;
+    border: none;
+    height: 50px;
+    min-width: 250px;
+    max-width: calc(50% - 20px); /* Añade esto para que los inputs ocupen como máximo el 50% del ancho del contenedor */
+}
+
+
+.datos-acciones {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn_acciones {
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+    .btn_acciones:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+.btn_acciones-cancelar {
+    background-color: #EDCA3B;
+}
+
+.btn_acciones-anadir {
+    background-color: #00BF63;
+}
+
+.alertas {
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+}
+
+/* Estilos para hacer la tabla responsive */
+@media screen and (max-width: 768px) {
+    .inputs-datos {
+        max-width: 100%; /* Ajusta el ancho máximo para ocupar todo el espacio en dispositivos pequeños */
+    }
+
+    .btn_acciones {
+        width: 100%; /* Ajusta el ancho de los botones para ocupar todo el espacio disponible */
+    }
+}
+
+/* Agregar animaciones a los inputs */
+.datos-input {
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+    .datos-input:focus {
+        background-color: #D3D3D3; /* Cambia el color de fondo al enfocar el input */
+    }
+
+/* Agregar animaciones a los botones */
+.btn_acciones {
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+    .btn_acciones:hover {
+        background-color: #3CB371; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+        transform: scale(1.05); /* Hace que el botón aumente ligeramente de tamaño al pasar el mouse sobre él */
+    }
+
+/* Agregar animaciones a las alertas */
+.alertas {
+    animation: shake 0.5s infinite alternate; /* Animación de temblor infinita para las alertas */
+}
+
+@keyframes shake {
+    from {
+        transform: translateX(-5px); /* Mueve la alerta 5px a la izquierda */
+    }
+
+    to {
+        transform: translateX(5px); /* Mueve la alerta 5px a la derecha */
+    }
+}
