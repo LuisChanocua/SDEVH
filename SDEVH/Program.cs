@@ -92,6 +92,14 @@ app.MapControllerRoute(
         defaults: new { controller = "Home", action = "HomePresidente" });
 #endregion
 
+#region Api
+app.MapControllerRoute(
+        name: "api/RegistrarUsuario",
+        pattern: "api/RegistrarUsuario",
+        defaults: new { controller = "Account", action = "RegistrarUsuario" });
+
+#endregion
+
 #region Errores
 app.MapControllerRoute(
         name: "Error404",
