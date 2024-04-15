@@ -2,16 +2,16 @@
     const btnIngresar = document.getElementById("btn_ingresar");
     const inputCorreo = document.getElementById("correo");
     const inputContrasena = document.getElementById("contrasena");
-    const modal = document.getElementById("modal");
-    const mensajeModal = document.getElementById("mensaje_modal");
+    const modalErrores = document.getElementById("modalErrores");
+    const mensaje_modal_errores = document.getElementById("mensaje_modal_errores");
 
-    function mostrarModal(mensaje) {
-        mensajeModal.textContent = mensaje;
-        modal.style.display = "block";
+    function mostrarModalErrores(mensaje) {
+        mensaje_modal_errores.textContent = mensaje;
+        modalErrores.style.display = "block";
     }
 
-    function cerrarModal() {
-        modal.style.display = "none";
+    function cerrarModalErrores() {
+        modalErrores.style.display = "none";
     }
 
     function validarCorreo(correo) {
@@ -28,21 +28,21 @@
         const contrasena = inputContrasena.value.trim();
 
         if (correo === '' || contrasena === '') {
-            mostrarModal("Por favor, complete todos los campos.");
+            mostrarModalErrores("Por favor, complete todos los campos.");
             return false;
         }
 
         if (!validarCorreo(correo)) {
-            mostrarModal("Por favor, ingrese un correo electrónico válido.");
+            mostrarModalErrores("Por favor, ingrese un correo electrónico válido.");
             return false;
         }
 
         if (!validarContrasena(contrasena)) {
-            mostrarModal("La contraseña debe tener al menos 6 caracteres.");
+            mostrarModalErrores("La contraseña debe tener al menos 6 caracteres.");
             return false;
         }
 
-        mostrarModal("¡Bienvenido! Has iniciado sesión correctamente.");
+        mostrarModalErrores("¡Bienvenido! Has iniciado sesión correctamente.");
         return true;
     }
 
@@ -50,13 +50,13 @@
         validarCampos();
     });
 
-    document.getElementById("cerrar_modal").addEventListener("click", function () {
-        cerrarModal();
+    document.getElementById("cerrar_modal_errores").addEventListener("click", function () {
+        cerrarModalErrores();
     });
 
     window.addEventListener("click", function (event) {
-        if (event.target == modal) {
-            cerrarModal();
+        if (event.target == modalErrores) {
+            cerrarModalErrores();
         }
     });
 });

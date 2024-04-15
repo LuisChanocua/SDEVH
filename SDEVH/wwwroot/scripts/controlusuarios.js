@@ -29,8 +29,8 @@ $("#btn_anadir").click(function () {
         }
 
     } else {
-        $("#alertas").show();
-        $("#alertas").text("Asegurese de llenar todos los campos");
+        $("#modalErrores").show();
+        $("#mensaje_modal_errores").text("Asegurese de llenar todos los campos");
 
     }
 

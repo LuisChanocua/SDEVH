@@ -24,3 +24,8 @@ function validarTelefono(telefono) {
         return false; // El número de teléfono no es válido
     }
 }
+
+
+
+
+
