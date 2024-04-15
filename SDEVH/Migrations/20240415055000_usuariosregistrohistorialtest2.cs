@@ -5,22 +5,22 @@
 namespace SDEVH.Migrations
 {
     /// <inheritdoc />
-    public partial class UsuariosEdadDeleteMigration : Migration
+    public partial class usuariosregistrohistorialtest2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Edad",
-                table: "Usuario");
+                name: "Hora",
+                table: "UsuarioHistorial");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Edad",
-                table: "Usuario",
+                name: "Hora",
+                table: "UsuarioHistorial",
                 type: "nvarchar(max)",
                 nullable: true);
         }
