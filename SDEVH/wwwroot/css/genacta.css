@@ -117,6 +117,14 @@ tr:nth-child(even) {
     background-color: #00BF63;
 }
 
+.btn_acciones-menos {
+    background-color: lightgray;
+}
+
+.btn_acciones-mas {
+    background-color: lightskyblue;
+}
+
 .alertas {
     margin-top: 3rem;
     color: white;
