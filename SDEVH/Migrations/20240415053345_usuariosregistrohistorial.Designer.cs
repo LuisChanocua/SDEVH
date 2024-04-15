@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SDEVH.Models;
 
@@ -11,9 +12,11 @@ using SDEVH.Models;
 namespace SDEVH.Migrations
 {
     [DbContext(typeof(SdevhContext))]
-    partial class SdevhContextModelSnapshot : ModelSnapshot
+    [Migration("20240415053345_usuariosregistrohistorial")]
+    partial class usuariosregistrohistorial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,10 +1,17 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SDEVH.Models;
 
+
+[Table("Usuario")]
 public partial class Usuario
 {
+
+    [Key]
     public Guid UsuarioId { get; set; }
 
     public string? Nombre { get; set; }
@@ -21,4 +28,7 @@ public partial class Usuario
 
     public string? Tel { get; set; }
 
+    // Propiedad de navegación inversa hacia UsuarioHistorial
+    [Required]
+    public required ICollection<UsuarioHistorial> HistorialUsuariosCollection { get; set; }
 }

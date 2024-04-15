@@ -9,6 +9,9 @@ namespace SDEVH.Models
 {
     public partial class SdevhContext : DbContext
     {
+        //Modelos de tablas bd
+        public DbSet<UsuarioHistorial> UsuarioHistorial { get; set; }
+
         private readonly IConfiguration Configuration;
 
         public SdevhContext()
@@ -33,9 +36,10 @@ namespace SDEVH.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e=> e.UsuarioId);
 
                 entity.Property(e => e.Apellidos)
                     .HasMaxLength(50)
@@ -59,6 +63,16 @@ namespace SDEVH.Models
                     .HasMaxLength(15)
                     .IsUnicode(false);
             });
+
+            //Tabla de historial de registro de usuarios
+            modelBuilder.Entity<UsuarioHistorial>()
+            .HasKey(uh => uh.IdRegistroUsuario); // Configura IdRegistroUsuario como clave primaria
+
+            modelBuilder.Entity<UsuarioHistorial>()
+                .HasOne(uh => uh.RegistradoPorUsuario) // Define la relación con Usuario
+                .WithMany() // Un usuario puede tener varios registros en el historial
+                .HasForeignKey(uh => uh.IdRegistroUsuario); // Configura IdRegistroUsuario como clave foránea
+
 
             OnModelCreatingPartial(modelBuilder);
         }
