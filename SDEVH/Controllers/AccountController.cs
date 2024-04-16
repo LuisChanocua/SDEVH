@@ -53,8 +53,7 @@ namespace SDEVH.Controllers
                 {
                     /* Crear registro en el historial de usuario */
                     UsuarioHistorial usuarioHistorial = new UsuarioHistorial
-                    {
-                        IdRegistroUsuario = Guid.NewGuid(),
+                    {                        
                         RegistradoPorUsuario = usuarioModel.UsuarioId,
                         FechaRegistroUsuario = DateTime.Now
                     };

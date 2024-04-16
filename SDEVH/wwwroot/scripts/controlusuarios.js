@@ -46,6 +46,10 @@ $("#btn_anadir").click(function () {
             data: dataUsuario,
             success: function (data) {
                 // Manejar la respuesta exitosa
+                if (data.success) {
+                    console.log("Usuario Registrado")
+
+                }
                               
             },
             error: function (xhr, status, error) {
@@ -56,8 +60,7 @@ $("#btn_anadir").click(function () {
 
 
     } else {
-        $("#modalErrores").show();
-        $("#mensaje_modal_errores").text("Asegurese de llenar todos los campos");
+        showModalErrores("Asegurese de llenar todos los campos");
 
     }
 
