@@ -19,12 +19,12 @@ $("#btn_anadir").click(function () {
         
         if (!validarCorreo(correo)) {
             //correo invalido
-            console.log("Correo invalido")
+            showModalErrores("Correo invalido")
             return false;
         }
         if (!validarTelefono(tel)) {
             //tel invalido
-            console.log("Tel invalido")
+            showModalErrores("Tel invalido")
             return false;
         }
 
