@@ -29,10 +29,11 @@ public partial class Usuario
     public string? Tel { get; set; }
 
     public int? Status { get; set; }
-    
+
     public Usuario()
     {
         UsuarioId = Guid.NewGuid();
+        Status = 1;
     }
 
 }

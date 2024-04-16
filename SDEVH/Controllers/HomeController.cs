@@ -8,10 +8,12 @@ namespace SDEVH.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly SdevhContext _dbcontext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, SdevhContext context)
         {
             _logger = logger;
+            _dbcontext = context;
         }
 
         public IActionResult Index()
@@ -26,6 +28,17 @@ namespace SDEVH.Controllers
 
         public IActionResult ControlUsuarios()
         {
+            try
+            {
+                var dataUsuarios = _dbcontext.Usuario.ToList();
+
+                ViewBag.DataUsuarios = dataUsuarios;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
             return View();
         }
 
