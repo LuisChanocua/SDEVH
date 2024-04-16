@@ -97,6 +97,11 @@ app.MapControllerRoute(
         name: "DocumentosAbiertos",
         pattern: "DocumentosAbiertos",
         defaults: new { controller = "Home", action = "HomePresidente" });
+
+app.MapControllerRoute(
+        name: "NotificacionesDocumentos",
+        pattern: "NotificacionesDocumentos",
+        defaults: new { controller = "Home", action = "NotificacionesActas" });
 #endregion
 
 #region Apis
