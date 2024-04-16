@@ -43,84 +43,90 @@ app.UseAuthorization();
 //Vistas enrutadas
 #region RutasAccount
 app.MapControllerRoute(
-        name: "Login",
-        pattern: "Login",
+        name: "login",
+        pattern: "login",
         defaults: new { controller = "Account", action = "Login" });
 
 #endregion
 
 #region RutasActasPosesion
 app.MapControllerRoute(
-        name: "CreacionActas",
-        pattern: "ActaPosesion/CreacionActas",
+        name: "creacionactas",
+        pattern: "actaposesion/creacionactas",
         defaults: new { controller = "ActaPosesion", action = "GenerarActaPosesion" });
 
 app.MapControllerRoute(
-        name: "EditarActaPosesion",
-        pattern: "ActaPosesion/EditarActaPosesion",
+        name: "editaractaposesion",
+        pattern: "actaPosesion/editaractaposesion",
         defaults: new { controller = "ActaPosesion", action = "EditarActaPosesion" });
 
 app.MapControllerRoute(
-        name: "IngresarMedidas",
-        pattern: "ActaPosesion/IngresarMedidas",
+        name: "actaposesion/ingresarmedidas",
+        pattern: "actaposesion/ingresarmedidas",
         defaults: new { controller = "ActaPosesion", action = "IngresarMedidasPosesion" });
 
 app.MapControllerRoute(
-        name: "IngresarMedidas",
-        pattern: "ActaPosesion/SubirArchivos",
+        name: "actaPosesion/subirarchivos",
+        pattern: "actaPosesion/subirarchivos",
         defaults: new { controller = "ActaPosesion", action = "SubirArchivos" });
 
 app.MapControllerRoute(
-        name: "IngresarMedidas",
-        pattern: "ActaPosesion/VistaPrevia",
+        name: "actaposesion/vistaprevia",
+        pattern: "actaposesion/vistaprevia",
         defaults: new { controller = "ActaPosesion", action = "VistaPreviaActaPosesion" });
 
 #endregion
 
 #region RutasHome
 app.MapControllerRoute(
-        name: "ControlUsuarios",
-        pattern: "ControlUsuarios",
+        name: "controlusuarios",
+        pattern: "controlusuarios",
         defaults: new { controller = "Home", action = "ControlUsuarios" });
 
 app.MapControllerRoute(
-        name: "EstadoActa",
-        pattern: "EstadoActa",
+        name: "estadoacta",
+        pattern: "estadoacta",
         defaults: new { controller = "Home", action = "EstadoActaPresidente" });
 
 app.MapControllerRoute(
-        name: "EncontrarTerreno",
-        pattern: "EncontrarTerreno",
+        name: "encontrarterreno",
+        pattern: "encontrarterreno",
         defaults: new { controller = "Home", action = "EncontrarTerreno" });
 
 app.MapControllerRoute(
-        name: "DocumentosAbiertos",
-        pattern: "DocumentosAbiertos",
+        name: "documentosabiertos",
+        pattern: "documentosabiertos",
         defaults: new { controller = "Home", action = "HomePresidente" });
 
 app.MapControllerRoute(
-        name: "NotificacionesDocumentos",
-        pattern: "NotificacionesDocumentos",
+        name: "notificacionesdocumentos",
+        pattern: "notificacionesdocumentos",
         defaults: new { controller = "Home", action = "NotificacionesActas" });
+
+app.MapControllerRoute(
+        name: "controlusuarios/editardatosusuario",
+        pattern: "controlusuarios/editardatosusuario",
+        defaults: new { controller = "Home", action = "EditarDatosUsuario" });
+
 #endregion
 
 #region Apis
 app.MapControllerRoute(
-        name: "api/RegistrarUsuario",
-        pattern: "api/RegistrarUsuario",
+        name: "api/registrarusuario",
+        pattern: "api/registrarusuario",
         defaults: new { controller = "Account", action = "RegistrarUsuario" });
 
 #endregion
 
 #region Errores
 app.MapControllerRoute(
-        name: "Error404",
-        pattern: "Error404",
+        name: "error404",
+        pattern: "error404",
         defaults: new { controller = "Errores", action = "Error404" });
 
 app.MapControllerRoute(
-        name: "Error500",
-        pattern: "Error500",
+        name: "error500",
+        pattern: "error500",
         defaults: new { controller = "Errores", action = "Error500" });
 
 
@@ -136,7 +142,7 @@ app.MapControllerRoute(
 
 /*Si no encuentra la ruta lo manda a 404*/
 app.MapControllerRoute(
-            name: "Error404",
+            name: "error404",
             pattern: "{*url}",
             defaults: new { controller = "Errores", action = "Error404" });
 

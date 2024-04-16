@@ -15,7 +15,7 @@ namespace SDEVH.Services
         }
 
         /*Consultar usuario*/    
-        public async Task<Usuario> GetUsuarioAsync(string correo, string password)
+        public async Task<Usuario> ValidarUsuarioAsync(string correo, string password)
         {
             Usuario usuario_encontrado = await _dbcontext.Usuario.Where(x=> x.Correo == correo && x.Password == password).FirstOrDefaultAsync();
 
@@ -40,5 +40,14 @@ namespace SDEVH.Services
 
             return nuevoHistorialUsurio;
         }
+
+        public async Task <Usuario> GetDatosUsuarioAsync(Guid UsuarioId)
+        {
+            Usuario usuario_data = await _dbcontext.Usuario.Where(x=> x.UsuarioId == UsuarioId).FirstOrDefaultAsync();
+            
+            return usuario_data;
+        }
+
+
     }
 }

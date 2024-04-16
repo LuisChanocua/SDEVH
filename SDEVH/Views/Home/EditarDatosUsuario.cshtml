@@ -1,0 +1,69 @@
+﻿@using SDEVH.DTO;
+@{
+    ViewData["Title"] = "EditarDatosUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // var DataUsuariosList = (List<UsuarioDTO>)ViewBag.DataUsuarios;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/controlusuarios.css" />
+}
+
+<div class="encabezado-pagina">
+    <h1 class="pagina-titulo">Editar datos de usuarios</h1>
+</div>
+
+<div class="contenedor-datos">
+    <div class="contenido-datos1">
+        <div class="inputs-datos">
+            <label class="datos-label" for="nombre">Nombre</label>
+            <input class="datos-input" name="nombre" id="nombre" type="text" />
+        </div>
+        <div class="inputs-datos">
+            <label class="datos-label" for="correo">Correo electrónico</label>
+            <input class="datos-input" name="correo" id="correo" type="email" />
+        </div>
+        <div class="inputs-datos">
+            <label class="datos-label" for="tel">Numero de celular/telefono</label>
+            <input class="datos-input" name="tel" id="tel" type="tel" />
+        </div>
+    </div>
+    <div class="contenido-datos2">
+        <div class="inputs-datos">
+            <label class="datos-label" for="contrasena">Contraseña</label>
+            <input class="datos-input" name="contrasena" id="contrasena" type="password" />
+        </div>
+        <div class="inputs-datos">
+            <label class="datos-label" for="apellidos">Apellidos</label>
+            <input class="datos-input" name="apellidos" id="apellidos" />
+        </div>
+        <div class="inputs-datos">
+            <label class="datos-label" for="direccion">Dirección</label>
+            <input class="datos-input" name="direccion" id="direccion" />
+        </div>
+    </div>
+    <div class="contenido-datos3">
+        <div class="inputs-datos">
+            <label class="datos-label" for="cargo">Cargo</label>
+            <select class="datos-input" name="cargo" id="cargo">
+                <option value="secretario">Secretario</option>
+                <option value="tesorero">Tesorero</option>
+                <option value="vigilacia">Vigilacia</option>
+                <option value="admistrador">Admistrador</option>
+            </select>
+        </div>
+        <div class="inputs-datos">
+            <div class="datos-acciones">
+                <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
+                <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Añadir</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+@section Scripts {
+    <script src="~/scripts/controlusuarios.js"></script>
+}
