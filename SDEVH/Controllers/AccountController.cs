@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SDEVH.Models;
+using SDEVH.Services;
 
 namespace SDEVH.Controllers
 {
@@ -24,7 +25,6 @@ namespace SDEVH.Controllers
         [HttpPost]
         public ActionResult RegistrarUsuario(Usuario usuarioModel)
         {
-
 
 
             return Json(new { 

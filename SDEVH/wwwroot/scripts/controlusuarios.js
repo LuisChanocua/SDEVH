@@ -11,12 +11,12 @@ $("#btn_anadir").click(function () {
     var direccion = $("#direccion").val();
     var cargo = $("#cargo").val();
 
-
+    
 
 
     /*Validaciones de los campos no estén vacios*/
-    if (nombre = ! "" && correo != "" && tel != "" && contrasena != "" && apellidos != "" && direccion != "" && cargo != "") {
-
+    if (nombre != "" && correo != "" && tel != "" && contrasena != "" && apellidos != "" && direccion != "" && cargo != "") {
+        
         if (!validarCorreo(correo)) {
             //correo invalido
             console.log("Correo invalido")
@@ -29,27 +29,21 @@ $("#btn_anadir").click(function () {
         }
 
         //Llamada ajax al registro del usuario
-        // Objeto de datos que incluye el valor float
-        var dataSend = {
-
+        var dataUsuario = {
+            Nombre: nombre,
+            Apellidos: apellidos,
+            Direccion: direccion,
+            Correo: correo,
+            Password: contrasena,
+            Cargo: cargo,
+            Tel: tel
         };
-
-        let dataUserForm = new FormData();
-
-        dataUserForm.append('Nombre', nombre);
-        dataUserForm.append('Apellidos', apellidos);
-        dataUserForm.append('Direccion', direccion);
-        dataUserForm.append('Correo', correo);
-        dataUserForm.append('Password', contrasena);
-        dataUserForm.append('Cargo', cargo);
-        dataUserForm.append('Tel', tel);
-
 
         // Realizar la solicitud AJAX
         $.ajax({
             url: '/api/RegistrarUsuario',
             type: 'POST',
-            data: dataUserForm,
+            data: dataUsuario,
             success: function (data) {
                 // Manejar la respuesta exitosa
                               
