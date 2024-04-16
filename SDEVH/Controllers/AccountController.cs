@@ -37,9 +37,8 @@ namespace SDEVH.Controllers
 
         //Registro de usuario
         [HttpPost]
-        public async ActionResult RegistrarUsuario(Usuario usuarioModel)
+        public async Task<ActionResult> RegistrarUsuario(Usuario usuarioModel)
         {
-
             try
             {
                 /*Codificar data*/
@@ -48,8 +47,6 @@ namespace SDEVH.Controllers
                 usuarioModel.Direccion = Utilidades.ToBase64Encode(usuarioModel.Direccion);
                 usuarioModel.Password = Utilidades.ToBase64Encode(usuarioModel.Password);
                 usuarioModel.Tel = Utilidades.ToBase64Encode(usuarioModel.Tel);
-                
-
 
                 Usuario usuario_creado = await _userServices.RegistrarUsuarioAsync(usuarioModel);
                 if (usuario_creado != null)
@@ -60,22 +57,26 @@ namespace SDEVH.Controllers
                         IdRegistroUsuario = Guid.NewGuid(),
                         RegistradoPorUsuario = usuarioModel.UsuarioId,
                         FechaRegistroUsuario = DateTime.Now
-                       
                     };
 
                     UsuarioHistorial usuario_registrado_historial = await _userServices.RegistrarUsuarioHistorialAsync(usuario_creado.UsuarioId, usuarioHistorial);
 
+                    // Retornar un ActionResult indicando que la operación se ha completado exitosamente
+                    return Json(new { success = true, message = "Usuario registrado correctamente." });
+                }
+                else
+                {
+                    // Retornar un ActionResult indicando que no se pudo crear el usuario
+                    return Json(new { success = false, message = "No se pudo crear el usuario." });
                 }
             }
             catch (Exception ex)
             {
+                // Manejar la excepción e indicar que ha ocurrido un error
                 Console.WriteLine(ex.Message);
-                return Json(new
-                {
-                    success = true,
-                    message = "Envio de datos al controlador pero sin realizar ninguna operación: " + ex
-                });
+                return Json(new { success = false, message = "Ha ocurrido un error al registrar el usuario: " + ex.Message });
             }
         }
+
     }
 }

@@ -12,8 +12,8 @@ using SDEVH.Models;
 namespace SDEVH.Migrations
 {
     [DbContext(typeof(SdevhContext))]
-    [Migration("20240415053345_usuariosregistrohistorial")]
-    partial class usuariosregistrohistorial
+    [Migration("20240416154751_ForeignDelete")]
+    partial class ForeignDelete
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,39 +32,25 @@ namespace SDEVH.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Apellidos")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cargo")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Correo")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tel")
-                        .HasMaxLength(15)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UsuarioId");
 
@@ -74,39 +60,18 @@ namespace SDEVH.Migrations
             modelBuilder.Entity("SDEVH.Models.UsuarioHistorial", b =>
                 {
                     b.Property<Guid>("IdRegistroUsuario")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("FechaRegistroUsuario")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("UsuarioId")
+                    b.Property<Guid>("RegistradoPorUsuario")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("IdRegistroUsuario");
 
-                    b.HasIndex("UsuarioId");
-
                     b.ToTable("UsuarioHistorial");
-                });
-
-            modelBuilder.Entity("SDEVH.Models.UsuarioHistorial", b =>
-                {
-                    b.HasOne("SDEVH.Models.Usuario", "RegistradoPorUsuario")
-                        .WithMany()
-                        .HasForeignKey("IdRegistroUsuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SDEVH.Models.Usuario", null)
-                        .WithMany("HistorialUsuariosCollection")
-                        .HasForeignKey("UsuarioId");
-
-                    b.Navigation("RegistradoPorUsuario");
-                });
-
-            modelBuilder.Entity("SDEVH.Models.Usuario", b =>
-                {
-                    b.Navigation("HistorialUsuariosCollection");
                 });
 #pragma warning restore 612, 618
         }

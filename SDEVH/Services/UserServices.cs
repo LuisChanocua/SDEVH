@@ -32,11 +32,13 @@ namespace SDEVH.Services
         }
 
         /*Registrar el historial de quien registro el Usuario*/
-        public async Task RegistrarUsuarioHistorialAsync(Guid usuarioId, UsuarioHistorial nuevoHistorial)
+        public async Task <UsuarioHistorial> RegistrarUsuarioHistorialAsync(Guid usuarioId, UsuarioHistorial nuevoHistorialUsurio)
         {
-            nuevoHistorial.IdRegistroUsuario = usuarioId;
-            _dbcontext.UsuarioHistorial.Add(nuevoHistorial);
+            nuevoHistorialUsurio.IdRegistroUsuario = usuarioId;
+            _dbcontext.UsuarioHistorial.Add(nuevoHistorialUsurio);
             await _dbcontext.SaveChangesAsync();
+
+            return nuevoHistorialUsurio;
         }
     }
 }

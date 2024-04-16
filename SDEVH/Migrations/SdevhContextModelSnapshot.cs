@@ -66,26 +66,9 @@ namespace SDEVH.Migrations
                     b.Property<Guid>("RegistradoPorUsuario")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("UsuarioId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("IdRegistroUsuario");
 
-                    b.HasIndex("UsuarioId");
-
                     b.ToTable("UsuarioHistorial");
-                });
-
-            modelBuilder.Entity("SDEVH.Models.UsuarioHistorial", b =>
-                {
-                    b.HasOne("SDEVH.Models.Usuario", null)
-                        .WithMany("HistorialUsuariosCollection")
-                        .HasForeignKey("UsuarioId");
-                });
-
-            modelBuilder.Entity("SDEVH.Models.Usuario", b =>
-                {
-                    b.Navigation("HistorialUsuariosCollection");
                 });
 #pragma warning restore 612, 618
         }
