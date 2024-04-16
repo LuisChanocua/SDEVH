@@ -17,27 +17,27 @@ $("#btn_anadir").click(function () {
 
         if (!validarNorte(norte) || !validarCorreo(norte2)) {
             // Correo inválido
-            console.log("Numero inválido");
+            console.log("Ingrese medidas");
             return false;
         }
         if (!validarSur(sur) || !validarTelefono(sur2)) {
             // Teléfono inválido
-            console.log("Numero inválido");
+            console.log("Ingrese medidas");
             return false;
         }
         if (!validarEste(este) || !validarTelefono(este2)) {
             // Teléfono inválido
-            console.log("Numero inválido");
+            console.log("Ingrese medidas");
             return false;
         }
         if (!validarOeste(oeste) || !validarTelefono(oeste2)) {
             // Teléfono inválido
-            console.log("Numero inválido");
+            console.log("Ingrese medidas");
             return false;
         }
 
     } else {
         $("#alertas").show();
-        $("#alertas").text("Asegúrese de llenar todos los campos");
+        $("#alertas").text("Asegurese de llenar todos los campos");
     }
 });

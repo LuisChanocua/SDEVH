@@ -5,6 +5,7 @@
     padding: 10px;
     text-align: center;
 }
+
 .encabezado-titulo {
     background-color: white;
     width: 100%;
@@ -76,14 +77,7 @@
         text-decoration: underline;
     }
 
-.btn_acciones-cancelar {
-    background-color: #EDCA3B;
-}
 
-
-.btn_acciones-agregar {
-    background-color: black;
-}
 
 .btn_acciones-anadir {
     background-color: #00BF63;
@@ -116,4 +110,3 @@
         width: 100%; /* Ajusta el ancho de los botones para ocupar todo el espacio disponible */
     }
 }
-
