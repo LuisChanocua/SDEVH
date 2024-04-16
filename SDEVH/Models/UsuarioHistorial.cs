@@ -9,7 +9,7 @@ namespace SDEVH.Models
         
         [Key]
         public Guid IdRegistroUsuario { get; set; }
-        public Usuario? RegistradoPorUsuario { get; set; }
+        public Guid RegistradoPorUsuario { get; set; }
         public DateTime? FechaRegistroUsuario { get; set; }
     }
 }

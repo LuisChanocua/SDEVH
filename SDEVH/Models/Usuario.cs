@@ -27,8 +27,10 @@ public partial class Usuario
     public string? Cargo { get; set; }
 
     public string? Tel { get; set; }
+    
+    public Usuario()
+    {
+        UsuarioId = Guid.NewGuid();
+    }
 
-    // Propiedad de navegación inversa hacia UsuarioHistorial
-    [Required]
-    public required ICollection<UsuarioHistorial> HistorialUsuariosCollection { get; set; }
 }
