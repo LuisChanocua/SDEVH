@@ -114,6 +114,10 @@ tr:nth-child(even) {
     background-color: #EDCA3B;
 }
 
+.btn_acciones-actualizar {
+    background-color: cornflowerblue;
+}
+
 .btn_acciones-anadir {
     background-color: #00BF63;
 }

@@ -5,17 +5,22 @@ using SDEVH.Models;
 using SDEVH.Resources;
 using System.Diagnostics;
 
+using SDEVH.Services;
+
 namespace SDEVH.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly SdevhContext _dbcontext;
+        private readonly UserServices _userservice;
 
-        public HomeController(ILogger<HomeController> logger, SdevhContext context)
+
+        public HomeController(ILogger<HomeController> logger, SdevhContext context, UserServices userServices)
         {
             _logger = logger;
             _dbcontext = context;
+            _userservice = userServices;    
         }
         #region Views
         public IActionResult Index()
@@ -76,11 +81,10 @@ namespace SDEVH.Controllers
         #endregion
 
         #region UsuariosFuctions
-        public ActionResult EditarDatosUsusario(Guid UsuarioId)
+        public async Task<ActionResult> EditarDatosUsusario(Guid UsuarioId)
         {
-
-
-
+            Usuario usuario_data = await _userservice.GetDatosUsuarioAsync(UsuarioId);
+            ViewBag.UsuarioData = usuario_data;
 
             return View();
         }

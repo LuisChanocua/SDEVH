@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SDEVH.Models;
 using SDEVH.Services;
@@ -105,8 +107,8 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
         name: "controlusuarios/editardatosusuario",
-        pattern: "controlusuarios/editardatosusuario",
-        defaults: new { controller = "Home", action = "EditarDatosUsuario" });
+        pattern: "controlusuarios/editardatosusuario/{UsuarioId?}",
+        defaults: new { controller = "Home", action = "EditarDatosUsuario"});
 
 #endregion
 
