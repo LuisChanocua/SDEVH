@@ -27,6 +27,8 @@ public partial class Usuario
     public string? Cargo { get; set; }
 
     public string? Tel { get; set; }
+
+    public int? Status { get; set; }
     
     public Usuario()
     {

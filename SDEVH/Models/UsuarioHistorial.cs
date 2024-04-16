@@ -11,5 +11,11 @@ namespace SDEVH.Models
         public Guid IdRegistroUsuario { get; set; }
         public Guid RegistradoPorUsuario { get; set; }
         public DateTime? FechaRegistroUsuario { get; set; }
+
+
+        public UsuarioHistorial()
+        {
+            IdRegistroUsuario = Guid.NewGuid();
+        }
     }
 }
