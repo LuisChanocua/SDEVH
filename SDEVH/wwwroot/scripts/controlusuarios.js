@@ -34,29 +34,25 @@ $("#btn_anadir").click(function () {
 
         };
 
-        let dataUserForm = new FormData;
+        let dataUserForm = new FormData();
 
-        dataUserForm.append("Nombre", nombre);
-        dataUserForm.append("Apellidos", apellidos);
-        dataUserForm.append("Direccion", direccion);
-        dataUserForm.append("Correo", correo);
-        dataUserForm.append("Password", contrasena);
-        dataUserForm.append("Cargo", cargo);
-        dataUserForm.append("Tel", tel);
+        dataUserForm.append('Nombre', nombre);
+        dataUserForm.append('Apellidos', apellidos);
+        dataUserForm.append('Direccion', direccion);
+        dataUserForm.append('Correo', correo);
+        dataUserForm.append('Password', contrasena);
+        dataUserForm.append('Cargo', cargo);
+        dataUserForm.append('Tel', tel);
 
 
         // Realizar la solicitud AJAX
         $.ajax({
-            url: 'api/RegistrarUsuario',
+            url: '/api/RegistrarUsuario',
             type: 'POST',
             data: dataUserForm,
-            success: function (response) {
+            success: function (data) {
                 // Manejar la respuesta exitosa
-                if (dataUserForm.success) {
-                    console.log(dataUserForm.message);
-                    // Redirecciona si la llamda es exitosa
-                    window.location.href = "/ControlUsuarios";
-                }                
+                              
             },
             error: function (xhr, status, error) {
                 // Manejar errores

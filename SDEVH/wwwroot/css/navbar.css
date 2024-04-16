@@ -32,3 +32,8 @@ body {
     display: inline-block !important;
     vertical-align: middle !important;
 }
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+}

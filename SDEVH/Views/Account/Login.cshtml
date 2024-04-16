@@ -1,15 +1,49 @@
 ﻿@{
     ViewData["Title"] = "Login";
-    // Layout = "~/Views/Shared/_Layout.cshtml";
-    Layout = null;
+
 }
 
 @section Styles {
-    
+    <link rel="stylesheet" href="~/css/log.css" />
 }
-<link rel="stylesheet" href="~/css/login.css" />
+
+<img src="~/assets/img/logolog.png" class="imgtop" alt="Imagen logo">
 
 
+<div class="contenedor_ingresarmedidas">
+    <div class="contenedor-datos container-sm">
+
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="Correo">Correo electronico</label>
+                <input class="datos-input" name="Correo" id="Correo" />
+            </div>
+
+        </div>
+
+        <div class="encabezado-titulo contenido-datos1">
+                <div class="inputs-datos">
+                    <label class="datos-label" for="norte2">Contraseña</label>
+                    <input class="datos-input" name="norte2" id="norte2" />
+                </div>
+        </div>
+
+        <div class="encabezado-titulo alertas container-sm" id="alertas"></div>
+
+        <div class="encabezado-titulo " contenido-datos4">
+
+            <div class="inputs-datos">
+                <div class="datos-acciones">
+                    <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Regresar</a>
+                    <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Ingrear</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<<<<<<< HEAD
 <div class="contenedor">
     <div class="imagen">
         <img src="~/assets/img/cap.png" alt="Imagen de inicio de sesión">
@@ -35,9 +69,12 @@
                 <a class="btn_acciones btn_acciones-regresar" href="~/" id="btn_cancelar">Regresar</a>
             </div>
         </div>
+=======
+>>>>>>> 6a6268da02d18203710dd3da9b74793872b19688
     </div>
-</div>
 
+
+</div>
 
 
 @section Scripts {

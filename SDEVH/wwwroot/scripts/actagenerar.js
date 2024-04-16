@@ -9,12 +9,12 @@ $("#btn_anadir").click(function () {
 
     // Validar que los campos no estén vacíos
     if (tipo !== "" && nombre !== "" && sede !== "") {
-        if (!validarCorreo(nombre)) {
+        if (!validarNombre(nombre)) {
             //correo invalido
             console.log("Complete los datos")
             return false;
         }
-        if (!validarTelefono(sede)) {
+        if (!validarSede(sede)) {
             //tel invalido
             console.log("Complete los datos")
             return false;

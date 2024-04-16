@@ -15,22 +15,22 @@ $("#btn_anadir").click(function () {
     if (norte !== "" && sur !== "" && este !== "" && oeste !== "" &&
         norte2 !== "" && sur2 !== "" && este2 !== "" && oeste2 !== "") {
 
-        if (!validarCorreo(norte) || !validarCorreo(norte2)) {
+        if (!validarNorte(norte) || !validarCorreo(norte2)) {
             // Correo inválido
             console.log("Numero inválido");
             return false;
         }
-        if (!validarTelefono(sur) || !validarTelefono(sur2)) {
+        if (!validarSur(sur) || !validarTelefono(sur2)) {
             // Teléfono inválido
             console.log("Numero inválido");
             return false;
         }
-        if (!validarTelefono(este) || !validarTelefono(este2)) {
+        if (!validarEste(este) || !validarTelefono(este2)) {
             // Teléfono inválido
             console.log("Numero inválido");
             return false;
         }
-        if (!validarTelefono(oeste) || !validarTelefono(oeste2)) {
+        if (!validarOeste(oeste) || !validarTelefono(oeste2)) {
             // Teléfono inválido
             console.log("Numero inválido");
             return false;
