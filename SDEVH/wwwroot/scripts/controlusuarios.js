@@ -48,7 +48,7 @@ $("#btn_anadir").click(function () {
                 // Manejar la respuesta exitosa
                 if (data.success) {
                     console.log("Usuario Registrado")
-
+                    window.location.href = "/ControlUsuarios";
                 }
                               
             },

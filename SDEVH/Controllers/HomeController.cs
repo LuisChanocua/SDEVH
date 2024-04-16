@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SDEVH.DTO;
 using SDEVH.Models;
+using SDEVH.Resources;
 using System.Diagnostics;
 
 namespace SDEVH.Controllers
@@ -28,16 +30,36 @@ namespace SDEVH.Controllers
 
         public IActionResult ControlUsuarios()
         {
+            var dataUsuariosDTO = new List<UsuarioDTO>();
             try
             {
                 var dataUsuarios = _dbcontext.Usuario.ToList();
 
-                ViewBag.DataUsuarios = dataUsuarios;
-            }catch(Exception ex)
+
+                foreach (var u in dataUsuarios)
+                {
+                    var reporItem = new UsuarioDTO
+                    {
+
+                        Nombre = Utilidades.Base64Decode(u.Nombre),
+                        Apellidos = Utilidades.Base64Decode(u.Apellidos),
+                        Direccion = Utilidades.Base64Decode(u.Direccion),
+                        Correo = Utilidades.Base64Decode(u.Correo),
+                        Cargo = Utilidades.Base64Decode(u.Cargo),
+                        Tel = Utilidades.Base64Decode(u.Tel),
+                        Status = u.Status
+
+                    };
+
+                    dataUsuariosDTO.Add(reporItem);
+                }
+                ViewBag.DataUsuarios = dataUsuariosDTO;
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return RedirectToAction("Error500");
             }
-
 
             return View();
         }
@@ -52,8 +74,8 @@ namespace SDEVH.Controllers
             return View();
         }
 
-       
-      
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

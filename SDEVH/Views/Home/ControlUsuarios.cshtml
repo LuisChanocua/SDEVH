@@ -1,7 +1,9 @@
-﻿@{
+﻿@using SDEVH.DTO;
+
+@{
     ViewData["Title"] = "ControlUsuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var DataUsuariosList = (List<Usuario>)ViewBag.DataUsuarios;
+    var DataUsuariosList = (List<UsuarioDTO>)ViewBag.DataUsuarios;
 
 }
 
@@ -55,8 +57,8 @@
         </div>
         <div class="inputs-datos">
             <div class="datos-acciones">
-                <a class="btn_acciones btn_acciones-cancelar" id="btn_cancelar">Cancelar</a>
-                <a class="btn_acciones btn_acciones-anadir" id="btn_anadir">Añadir</a>
+                <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Cancelar</a>
+                <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Añadir</a>
             </div>
         </div>
 
