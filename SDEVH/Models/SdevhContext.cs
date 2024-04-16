@@ -40,5 +40,6 @@ namespace SDEVH.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
     }
 }

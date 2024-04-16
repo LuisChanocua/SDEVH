@@ -1,22 +1,33 @@
 ﻿using SDEVH.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore;
 
 namespace SDEVH.Services
 {
     public class UserServices
     {
-        private readonly SdevhContext _context;
+        private readonly SdevhContext _dbcontext;
 
         public UserServices(SdevhContext context)
         {
             //contexto de la bd
-            _context = context;
+            _dbcontext = context;
+        }
+
+        /*Consultar usuario*/    
+        public async Task<Usuario> GetUsuarioAsync(string correo, string password)
+        {
+            Usuario usuario_encontrado = await _dbcontext.Usuario.Where(x=> x.Correo == correo && x.Password == password).FirstOrDefaultAsync();
+
+
+            return usuario_encontrado;
         }
 
         /*Registrar Usuario*/
         public async Task<Usuario> RegistrarUsuarioAsync(Usuario nuevoUsuario)
         {
-            _context.Usuario.Add(nuevoUsuario);
-            await _context.SaveChangesAsync();
+            _dbcontext.Usuario.Add(nuevoUsuario);
+            await _dbcontext.SaveChangesAsync();
             return nuevoUsuario;
         }
 
@@ -24,8 +35,8 @@ namespace SDEVH.Services
         public async Task RegistrarUsuarioHistorialAsync(Guid usuarioId, UsuarioHistorial nuevoHistorial)
         {
             nuevoHistorial.IdRegistroUsuario = usuarioId;
-            _context.UsuarioHistorial.Add(nuevoHistorial);
-            await _context.SaveChangesAsync();
+            _dbcontext.UsuarioHistorial.Add(nuevoHistorial);
+            await _dbcontext.SaveChangesAsync();
         }
     }
 }

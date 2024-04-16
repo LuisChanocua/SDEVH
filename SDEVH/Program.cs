@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using SDEVH.Models;
+using SDEVH.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,12 @@ builder.Services.AddControllersWithViews();
 /*Conexion BD*/
 builder.Services.AddDbContext<SdevhContext>(options =>
 options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+
+#region Services
+/*Declaramos servicio para poder usarlo en el proyecto*/
+builder.Services.AddScoped<UserServices>();
+
+#endregion
 
 var app = builder.Build();
 
@@ -92,7 +99,7 @@ app.MapControllerRoute(
         defaults: new { controller = "Home", action = "HomePresidente" });
 #endregion
 
-#region Api
+#region Apis
 app.MapControllerRoute(
         name: "api/RegistrarUsuario",
         pattern: "api/RegistrarUsuario",
