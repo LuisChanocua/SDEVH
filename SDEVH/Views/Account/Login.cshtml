@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Login";
-
 }
 
 @section Styles {
@@ -9,47 +8,44 @@
 
 <img src="~/assets/img/logolog.png" class="imgtop" alt="Imagen logo">
 
-
 <div class="contenedor_ingresarmedidas">
     <div class="contenedor-datos container-sm">
 
         <div class="contenido-datos1">
             <div class="inputs-datos">
-                <label class="datos-label" for="Correo">Correo electronico</label>
-                <input class="datos-input" name="Correo" id="Correo" />
+                <label class="datos-label" for="correo">Correo electrónico</label>
+                <input class="datos-input" name="correo" id="correo" />
             </div>
-
         </div>
 
-        <div class="encabezado-titulo contenido-datos1">
-                <div class="inputs-datos">
-                    <label class="datos-label" for="norte2">Contraseña</label>
-                    <input class="datos-input" name="norte2" id="norte2" />
-                </div>
+        <div class="encabezado-titulo contenido-datos2">
+            <div class="inputs-datos">
+                <label class="datos-label" for="contrasena">Contraseña</label>
+                <input class="datos-input" name="contrasena" id="contrasena" />
+            </div>
         </div>
 
         <div class="encabezado-titulo alertas container-sm" id="alertas"></div>
 
-        <div class="encabezado-titulo " contenido-datos4">
-
+        <div class="encabezado-titulo contenido-datos3">
             <div class="inputs-datos">
                 <div class="datos-acciones">
-                    <a class="btn_acciones btn_acciones-cancelar" href="#" id="btn_cancelar">Regresar</a>
-                    <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Ingrear</a>
+                    <a class="btn_acciones btn_acciones-cancelar" href="#">Regresar</a>
+                    <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_ingresar">Ingresar</a>
                 </div>
             </div>
         </div>
 
-
-
-
     </div>
-
-
 </div>
 
+<div id="modalErrores" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" id="cerrar_modal_errores">&times;</span>
+        <p id="mensaje_modal_errores"></p>
+    </div>
+</div>
 
 @section Scripts {
-   
+    <script src="~/scripts/login.js"></script>
 }
-<script src="~/scripts/login.js" .js"></script>
