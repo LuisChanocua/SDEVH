@@ -45,7 +45,7 @@ namespace SDEVH.Controllers
                 {
                     var reporItem = new UsuarioDTO
                     {
-
+                        UsuarioId = u.UsuarioId,
                         Nombre = Utilidades.Base64Decode(u.Nombre),
                         Apellidos = Utilidades.Base64Decode(u.Apellidos),
                         Direccion = Utilidades.Base64Decode(u.Direccion),
