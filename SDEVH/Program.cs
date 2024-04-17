@@ -75,6 +75,11 @@ app.MapControllerRoute(
         pattern: "actaposesion/vistaprevia",
         defaults: new { controller = "ActaPosesion", action = "VistaPreviaActaPosesion" });
 
+app.MapControllerRoute(
+        name: "actaposesion/estadodelacta",
+        pattern: "actaposesion/estadodelacta",
+        defaults: new { controller = "ActaPosesion", action = "EstadoDelActa" });
+
 #endregion
 
 #region RutasHome

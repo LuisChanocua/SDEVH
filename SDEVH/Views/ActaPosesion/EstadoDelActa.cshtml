@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "EstadoDelActa";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/estadoacta.css" />
+}
+<div class="contenedor_generaracta">
+    <div class="encabezado-pagina">
+        <h1 class="pagina-titulo">Estado del acta</h1>
+    </div>
+    <div class="alertas container-sm" id="alertas"></div>
+    <div></div>
+
+    <div class="contenedor-datos container-sm">
+        <div class="contenido-datos1">
+                <div class="inputs-datos">
+                    <label class="datos-label" for="folio">Folio</label>
+                <input class="datos-input" name="folio" id="folio" type="text" />
+                </div>
+                <div class="inputs-datos">
+                    <div class="datos-acciones">
+                        <a class="btn_acciones btn_acciones-anadir" href="#" id="btn_anadir">Buscar</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="encabezado-titulo">
+            <h4 class="letra">Nueva acta de posecion</h4>
+        </div>
+
+        <div class="contenido-datos1">
+                <div class="inputs-datos">
+                    <label class="datos-label" for="nombre">Nombre(s)</label>
+                    <input class="datos-input" name="nombre" id="nombre" type="text" />
+                </div>
+                <div class="inputs-datos">
+                    <label class="datos-label" for="nombre">Apelllidos(s)</label>
+                    <input class="datos-input" name="nombre" id="nombre" type="text" />
+                </div>
+                <div class="inputs-datos">
+                    <label class="datos-label" for="nombre">Ubicacion</label>
+                    <input class="datos-input" name="nombre" id="nombre" type="text" />
+                </div>
+        </div>
+
+        <div class="encabezado-titulo">
+            <h4 class="letra">Medidas</h4>
+        </div>
+
+
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="norte">Norte</label>
+                <input class="datos-input" name="norte" id="norte" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="sur">Sur</label>
+                <input class="datos-input" name="sur" id="sur" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="este">Este</label>
+                <input class="datos-input" name="este" id="este" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="oeste">Oeste</label>
+                <input class="datos-input" name="oeste" id="oeste" type="number" />
+            </div>
+        </div>
+
+        <div class="encabezado-titulo">
+            <h4 class="letra">Colindancias</h4>
+        </div>
+
+        <div class="contenido-datos1">
+            <div class="inputs-datos">
+                <label class="datos-label" for="norte">Norte</label>
+                <input class="datos-input" name="norte" id="norte" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="sur">Sur</label>
+                <input class="datos-input" name="sur" id="sur" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="este">Este</label>
+                <input class="datos-input" name="este" id="este" type="number" />
+            </div>
+            <div class="inputs-datos">
+                <label class="datos-label" for="oeste">Oeste</label>
+                <input class="datos-input" name="oeste" id="oeste" type="number" />
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="~/scripts/estadoacta.js"></script>
+} 
