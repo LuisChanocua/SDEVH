@@ -106,9 +106,10 @@ app.MapControllerRoute(
         defaults: new { controller = "Home", action = "NotificacionesActas" });
 
 app.MapControllerRoute(
-        name: "controlusuarios/editardatosusuario",
-        pattern: "controlusuarios/editardatosusuario/{UsuarioId?}",
-        defaults: new { controller = "Home", action = "EditarDatosUsusario" });
+    name: "controlusuarios/editardatosusuario",
+    pattern: "controlusuarios/editardatosusuario/{UsuarioId?}",
+    defaults: new { controller = "Home", action = "EditarDatosUsuario" });
+
 
 #endregion
 

@@ -6,6 +6,7 @@ using SDEVH.Resources;
 using System.Diagnostics;
 
 using SDEVH.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace SDEVH.Controllers
 {
@@ -20,7 +21,7 @@ namespace SDEVH.Controllers
         {
             _logger = logger;
             _dbcontext = context;
-            _userservice = userServices;    
+            _userservice = userServices;
         }
         #region Views
         public IActionResult Index()
@@ -54,6 +55,7 @@ namespace SDEVH.Controllers
                         Tel = Utilidades.Base64Decode(u.Tel),
                         Status = u.Status
 
+
                     };
 
                     dataUsuariosDTO.Add(reporItem);
@@ -81,11 +83,36 @@ namespace SDEVH.Controllers
         #endregion
 
         #region UsuariosFuctions
-        public async Task<ActionResult> EditarDatosUsusario(Guid UsuarioId)
+        public ActionResult EditarDatosUsuario(Guid UsuarioId)
         {
-            Usuario usuario_data = await _userservice.GetDatosUsuarioAsync(UsuarioId);
-            ViewBag.UsuarioData = usuario_data;
+            var reportUsuarioData = new List<UsuarioDTO>();
 
+            try
+            {
+                var usuario_data = _dbcontext.Usuario.Where(x => x.UsuarioId == UsuarioId).ToList();
+
+                foreach (var u in usuario_data)
+                {
+                    var reportItem = new UsuarioDTO
+                    {
+                        UsuarioId = u.UsuarioId,
+                        Nombre = Utilidades.Base64Decode(u.Nombre),
+                        Apellidos = Utilidades.Base64Decode(u.Apellidos),
+                        Direccion = Utilidades.Base64Decode(u.Direccion),
+                        Correo = Utilidades.Base64Decode(u.Correo),
+                        Cargo = Utilidades.Base64Decode(u.Cargo),
+                        Tel = Utilidades.Base64Decode(u.Tel),
+                        Status = u.Status
+
+                    };
+                    reportUsuarioData.Add(reportItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            ViewBag.UsuarioData = reportUsuarioData;
             return View();
         }
 

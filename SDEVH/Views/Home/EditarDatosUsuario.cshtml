@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "EditarDatosUsuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var DataUsuarioList = (List<Usuario>)ViewBag.UsuarioData;
+    var DataUsuarioList = (List<UsuarioDTO>)ViewBag.UsuarioData;
 }
 
 @section Styles {
@@ -49,7 +49,7 @@
     <div class="inputs-datos">
         <div class="datos-acciones">
             <a class="btn_acciones btn_acciones-cancelar" href="~/controlusuarios" id="btn_cancelar">Cancelar</a>
-            <a class="btn_acciones btn_acciones-actualizar" href="#" id="btn_actualizar">Añadir</a>
+            <a class="btn_acciones btn_acciones-actualizar" href="#" id="btn_actualizar">Actualizar</a>
         </div>
     </div>
 </div>

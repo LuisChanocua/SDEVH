@@ -1,4 +1,5 @@
 ﻿using SDEVH.Models;
+using SDEVH.Resources;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,14 +41,5 @@ namespace SDEVH.Services
 
             return nuevoHistorialUsurio;
         }
-
-        public async Task <Usuario> GetDatosUsuarioAsync(Guid UsuarioId)
-        {
-            Usuario usuario_data = await _dbcontext.Usuario.Where(x=> x.UsuarioId == UsuarioId).FirstOrDefaultAsync();
-            
-            return usuario_data;
-        }
-
-
     }
 }
