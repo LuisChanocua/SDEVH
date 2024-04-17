@@ -30,6 +30,10 @@ namespace SDEVH.Controllers
             return View();
         }
 
+        public IActionResult EstadoDelActa()
+        {
+            return View();
+        }
 
     }
 }
