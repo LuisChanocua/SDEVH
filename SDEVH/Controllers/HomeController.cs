@@ -7,6 +7,7 @@ using System.Diagnostics;
 
 using SDEVH.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace SDEVH.Controllers
 {
@@ -26,14 +27,16 @@ namespace SDEVH.Controllers
         #region Views
         public IActionResult Index()
         {
+            
             return View();
         }
 
+        [Authorize(Policy = "AdminRole")]
         public IActionResult HomePresidente()
         {
             return View();
         }
-
+        [Authorize(Policy = "AdminRole")]
         public IActionResult ControlUsuarios()
         {
             var dataUsuariosDTO = new List<UsuarioDTO>();
@@ -70,12 +73,12 @@ namespace SDEVH.Controllers
 
             return View();
         }
-
+        [Authorize(Policy = "AdminRole")]
         public IActionResult EstadoActaPresidente()
         {
             return View();
         }
-
+        [Authorize(Policy = "AdminRole")]
         public IActionResult EncontrarTerreno()
         {
             return View();
@@ -83,6 +86,7 @@ namespace SDEVH.Controllers
         #endregion
 
         #region UsuariosFuctions
+        [Authorize(Policy = "AdminRole")]
         public ActionResult EditarDatosUsuario(Guid UsuarioId)
         {
             var reportUsuarioData = new List<UsuarioDTO>();

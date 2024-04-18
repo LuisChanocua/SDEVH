@@ -30,6 +30,14 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
     });
 
+/*Configurar la autorización*/
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminRole", policy =>
+        policy.RequireRole("administrador"));
+});
+
+
 #endregion
 
 var app = builder.Build();
@@ -60,6 +68,12 @@ app.MapControllerRoute(
         name: "login",
         pattern: "login",
         defaults: new { controller = "Account", action = "Login" });
+
+app.MapControllerRoute(
+        name: "cerrarsesion",
+        pattern: "cerrarsesion",
+        defaults: new { controller = "Account", action = "CerrarSesion" });
+
 
 #endregion
 

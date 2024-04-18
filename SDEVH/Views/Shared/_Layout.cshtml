@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var userName = User.Identity.Name;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,48 +31,77 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav mx-auto">
+
                         <li class="nav-item">
                             <a class="textnav nav-link text-dark" href="~/">
                                 <span class="icono"><i class="material-icons">home</i></span>
                                 Inicio
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/ActaPosesion/EstadoDelActa">
-                                <span class="icono"><i class="material-icons">article</i></span>
-                                Estado del acta
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/encontrarterreno">
-                                <span class="icono"><i class="material-icons">pin_drop</i></span>
-                                Ubicacion del terreno
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/controlusuarios">
-                                <span class="icono"><i class="material-icons">admin_panel_settings</i></span>
-                                Control de usuarios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="textnav nav-link text-dark" href="~/ActaPosesion/CreacionActas">
-                                <span class="icono"><i class="material-icons">post_add</i></span>
-                                Creacion de actas
-                            </a>
-                        </li>
-                    </ul>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="textnav nav-link text-dark" href="~/ActaPosesion/EstadoDelActa">
+                                    <span class="icono"><i class="material-icons">article</i></span>
+                                    Estado del acta
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="textnav nav-link text-dark" href="~/encontrarterreno">
+                                    <span class="icono"><i class="material-icons">pin_drop</i></span>
+                                    Ubicacion del terreno
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="textnav nav-link text-dark" href="~/controlusuarios">
+                                    <span class="icono"><i class="material-icons">admin_panel_settings</i></span>
+                                    Control de usuarios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="textnav nav-link text-dark" href="~/ActaPosesion/CreacionActas">
+                                    <span class="icono"><i class="material-icons">post_add</i></span>
+                                    Creacion de actas
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="textnav nav-link text-dark" href="~/cerrarsesion">
+                                    Cerrar Sesion
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="textnav nav-link text-dark" href="~/login">
+                                    Login
+                                </a>
+                            </li>
+                        }
+
+
                     </ul>
 
                     <ul>
-                        <li class="navbar-nav ms-auto">
-                            <a class="textnav nav-link text-dark" href="~/Privacy">
-                                <span class="icono"><i class="material-icons">person</i></span>
-                                Usuario
-                            </a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="navbar-nav ms-auto">
+                                <a class="textnav nav-link text-dark" href="~/Privacy">
+                                    <span class="icono"><i class="material-icons">person</i></span>
+                                    @userName
+                                </a>
+                            </li>
+                        }
+
+
+
+
                     </ul>
 
                 </div>

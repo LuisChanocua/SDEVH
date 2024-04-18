@@ -7,6 +7,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using SDEVH.Resources;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SDEVH.Controllers
 {
@@ -38,6 +39,7 @@ namespace SDEVH.Controllers
 
 
         //Registro de usuario
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult> RegistrarUsuario(Usuario usuarioModel)
         {
@@ -89,13 +91,16 @@ namespace SDEVH.Controllers
             Usuario usuario_encontrado = await _userServices.ValidarUsuarioAsync(correo, password);
 
             if (usuario_encontrado == null)
-            {               
+            {
                 return Json(new { success = false, message = "Correo o Contraseña incorrectos" });
             }
 
+            usuario_encontrado.Nombre = Utilidades.Base64Decode(usuario_encontrado.Nombre);
+
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, usuario_encontrado.Nombre)
+                new Claim(ClaimTypes.Name, usuario_encontrado.Nombre),
+                new (ClaimTypes.Role,  usuario_encontrado.Cargo)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -107,11 +112,18 @@ namespace SDEVH.Controllers
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity),
-                properties                          
+                properties
                 );
 
-            return Json(new { success = true, message = "Usuario iniciado sesion correctamente"});
+            return Json(new { success = true, message = "Usuario iniciado sesion correctamente" });
         }
 
+        public async Task<ActionResult> CerrarSesion()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+
+            return Redirect("/");
+        }
     }
 }

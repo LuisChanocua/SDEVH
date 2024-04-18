@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var nombreUsuario = ViewBag.NombreUsuario;
+    var cargoUsuario=  ViewBag.CargoUsuario;
 }
 
 @section Styles{
@@ -7,8 +9,7 @@
 }
 
 <img src="~/assets/img/PaisajePrincipal.jpg" class="imgtop" alt="Imagen de ejido">
-
-
+<h1>@cargoUsuario</h1>
 <div class="container">
     <div class="row align-items-center">
         <div class="col-lg-6 d-flex justify-content-center flex-column">
