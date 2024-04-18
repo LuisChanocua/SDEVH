@@ -101,7 +101,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
         name: "NotificacionesDocumentos",
         pattern: "NotificacionesDocumentos",
-        defaults: new { controller = "Home", action = "NotificacionesActas" });
+        defaults: new { controller = "Home", action = "NotificacionActas" });
 #endregion
 
 #region Apis

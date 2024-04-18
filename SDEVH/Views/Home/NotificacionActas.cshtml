@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "NotificacionActas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+<link rel="stylesheet" href="~/css/notificacionActas.css" />
+}
+
+<div class="card">
+    
+    <div class="card-body">
+        <p class="alert alert-success"><span class="fa fa-exclamation-circle"></span> Los siguientes documentos estan pendientes por subir, el registro no será completado hasta que todos los documentos requeridos hayan sido cargados.</p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-condensed table-striped">
+                <thead>
+                    <tr class="bg-info">
+                        <th>Propietario</th>
+                        <th>Folio</th>
+                        <th>Tipo de documento</th>
+                        <th>Acciones a realizar</th>
+                        <th>Fecha de creación</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>
+                            Jorge Álvarez Máynez
+                        </td>
+                        <td>222</td>
+                        <td>
+                            Acta de poseción
+                        </td>
+                        <td>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Editar <span class="icono"><i class="material-icons">edit</i></span></a>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Subir archivo <span class="icono"><i class="material-icons">upload</i></span></a>
+
+                        </td>
+                        <td>
+                            2024-04-16
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Comunidad ejidal
+                        </td>
+                        <td>221</td>
+                        <td>
+                            Acta de asamblea
+                        </td>
+                        <td>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Editar <span class="icono"><i class="material-icons">edit</i></span></a>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Subir archivo <span class="icono"><i class="material-icons">upload</i></span></a>
+
+                        </td>
+                        <td>
+                            2024-04-15
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Andrés Manuel López Obrador
+                        </td>
+                        <td>220</td>
+                        <td>
+                            Contrato de usufructo
+                        </td>
+                        <td>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Editar <span class="icono"><i class="material-icons">edit</i></span></a>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Subir archivo <span class="icono"><i class="material-icons">upload</i></span></a>
+
+                        </td>
+                        <td>
+                            2024-04-14
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Bertha Xóchitl Gálvez Ruiz
+                        </td>
+                        <td>219</td>
+                        <td>
+                            Acta de poseción
+                        </td>
+                        <td>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Editar <span class="icono"><i class="material-icons">edit</i></span></a>
+                            <a class="btn btn-default" href="/ITSH/alumno/entregaEvidencia?p=2241&amp;g=GDB2004A&amp;t=2&amp;e=3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Subir evidencia">Subir archivo <span class="icono"><i class="material-icons">upload</i></span></a>
+                        </td>
+                        <td>
+                            2024-04-13
+                        </td>
+                    </tr>
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
