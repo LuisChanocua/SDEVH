@@ -18,7 +18,7 @@ namespace SDEVH.Services
         /*Consultar usuario*/    
         public async Task<Usuario> ValidarUsuarioAsync(string correo, string password)
         {
-            Usuario usuario_encontrado = await _dbcontext.Usuario.Where(x=> x.Correo == correo && x.Password == password).FirstOrDefaultAsync();
+            Usuario usuario_encontrado = await _dbcontext.Usuario.Where(x=> x.Correo == correo && x.Password == password && x.Status == 1).FirstOrDefaultAsync();
 
 
             return usuario_encontrado;
