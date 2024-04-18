@@ -15,9 +15,11 @@ namespace SDEVH.Controllers
         /*Para usar servicios de usuarios*/
         private readonly UserServices _userServices;
 
-        public AccountController(UserServices userServices)
+        public readonly SdevhContext _devhContext;
+        public AccountController(UserServices userServices, SdevhContext devhContext)
         {
             _userServices = userServices;
+            _devhContext = devhContext;
         }
 
         #region Views
@@ -53,7 +55,7 @@ namespace SDEVH.Controllers
                 {
                     /* Crear registro en el historial de usuario */
                     UsuarioHistorial usuarioHistorial = new UsuarioHistorial
-                    {                        
+                    {
                         RegistradoPorUsuario = usuarioModel.UsuarioId,
                         FechaRegistroUsuario = DateTime.Now
                     };
@@ -75,6 +77,40 @@ namespace SDEVH.Controllers
                 Console.WriteLine(ex.Message);
                 return Json(new { success = false, message = "Ha ocurrido un error al registrar el usuario: " + ex.Message });
             }
+        }
+
+
+
+        [HttpPost]
+        public async Task<ActionResult> IniciarSesion(string correo, string password)
+        {
+            password = Utilidades.ToBase64Encode(password);
+
+            Usuario usuario_encontrado = await _userServices.ValidarUsuarioAsync(correo, password);
+
+            if (usuario_encontrado == null)
+            {               
+                return Json(new { success = false, message = "Correo o Contraseña incorrectos" });
+            }
+
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, usuario_encontrado.Nombre)
+            };
+
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            AuthenticationProperties properties = new AuthenticationProperties()
+            {
+                AllowRefresh = true
+            };
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                properties                          
+                );
+
+            return Json(new { success = true, message = "Usuario iniciado sesion correctamente"});
         }
 
     }

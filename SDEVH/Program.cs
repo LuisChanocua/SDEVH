@@ -5,6 +5,8 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SDEVH.Models;
 using SDEVH.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,14 @@ options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 #region Services
 /*Declaramos servicio para poder usarlo en el proyecto*/
 builder.Services.AddScoped<UserServices>();
+
+/*auth por cookies*/
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/login";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    });
 
 #endregion
 
@@ -40,6 +50,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+/*auth cookie*/
+app.UseAuthentication();
 app.UseAuthorization();
 
 //Vistas enrutadas
@@ -123,6 +135,13 @@ app.MapControllerRoute(
         name: "api/registrarusuario",
         pattern: "api/registrarusuario",
         defaults: new { controller = "Account", action = "RegistrarUsuario" });
+
+app.MapControllerRoute(
+        name: "api/iniciarsesion",
+        pattern: "api/iniciarsesion",
+        defaults: new { controller = "Account", action = "IniciarSesion" });
+
+
 
 #endregion
 

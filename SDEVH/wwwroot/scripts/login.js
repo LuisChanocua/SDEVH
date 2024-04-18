@@ -5,6 +5,8 @@
     const modalErrores = document.getElementById("modalErrores");
     const mensaje_modal_errores = document.getElementById("mensaje_modal_errores");
 
+    
+
     //function mostrarModalErrores(mensaje) {
     //    mensaje_modal_errores.textContent = mensaje;
     //    modalErrores.style.display = "block";
@@ -47,7 +49,45 @@
     }
 
     btnIngresar.addEventListener("click", function () {
-        validarCampos();
+        var correo = $("#correo").val().trim();
+        var contrasena = $("#contrasena").val().trim();
+        
+        if (correo != "" && contrasena != "") {
+
+            if (!validarCorreo(correo)) {
+                //correo invalido
+                showModalErrores("Correo invalido")
+                return false;
+            }
+
+            var dataUsuario = {
+                correo: $("#correo").val().trim(),
+                password: $("#contrasena").val().trim()
+            }
+
+            // Realizar la solicitud AJAX
+            $.ajax({
+                url: '/api/iniciarsesion',
+                type: 'POST',
+                data: dataUsuario,
+                success: function (data) {
+                    // Manejar la respuesta exitosa
+                    if (data.success) {
+                        console.log("Iniciado sesion")
+                        window.location.href = "/";
+                    } else {
+                        showModalErrores(data.message);
+                    }
+
+                },
+                error: function (xhr, status, error) {
+                    showModalErrores("Error: " + error);
+
+                }
+            });
+        } else {
+            showModalErrores("Asegurese de llenar todos los campos")
+        }
     });
 
     //document.getElementById("cerrar_modal_errores").addEventListener("click", function () {
