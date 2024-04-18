@@ -5,7 +5,7 @@ var ModalsResources = {
 }
 
 function showModalErrores(msgerror) {
-    $("#cerrar_modal_errores").show();
+    $("#modalErrores").show();
     $("#mensaje_modal_errores").text(msgerror);
 
 }
