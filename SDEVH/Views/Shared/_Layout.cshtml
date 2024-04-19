@@ -63,15 +63,22 @@
                                     Control de usuarios
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="textnav nav-link text-dark" href="~/ActaPosesion/CreacionActas">
+                            <li class="nav-item dropdown">
+                                <a class="textnav nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="icono"><i class="material-icons">post_add</i></span>
-                                    Creacion de actas
+                                    Creación de actas
                                 </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="~/ActaPosesion/CreacionActas">Acta de posecion</a></li>
+                                    <li><a class="dropdown-item" href="#">Acta de asamblea</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Contrato de usufructo</a></li>
+                                </ul>
                             </li>
 
                             <li class="nav-item">
                                 <a class="textnav nav-link text-dark" href="~/cerrarsesion">
+                                    <span class="icono"><i class="material-icons">logout</i></span>
                                     Cerrar Sesion
                                 </a>
                             </li>
@@ -80,6 +87,7 @@
                         {
                             <li class="nav-item">
                                 <a class="textnav nav-link text-dark" href="~/login">
+                                    <span class="icono"><i class="material-icons">person</i></span>
                                     Login
                                 </a>
                             </li>
